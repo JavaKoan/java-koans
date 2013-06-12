@@ -3,7 +3,6 @@ package com.java.arrays;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertSame;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,6 +26,7 @@ public class BakeryTest {
         bakery = new Bakery();
 
         Bakery.Pie[] pies = bakery.getPies();
+
 
 
     }
