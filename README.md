@@ -23,6 +23,11 @@ Favourite IDE with the ability to execute unit tests.
 
 Basic understanding of the Java programming language.
 
+Primers
+-------
+
+If you are unfamiliar with JUnit you should start with the primer rather than the exercises
+
 Related Material
 ----------------
 
