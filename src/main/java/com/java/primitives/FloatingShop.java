@@ -15,8 +15,9 @@ public class FloatingShop {
         final double TEN_CENTS = 0.10;
 
         int itemsBought = 0;
+        double price = TEN_CENTS;
 
-        for (double price = TEN_CENTS; cash >= price; price += TEN_CENTS) {
+        for (; cash >= price; price += TEN_CENTS) {
             cash -= price;
             itemsBought++;
         }

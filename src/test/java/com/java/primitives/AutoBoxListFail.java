@@ -21,7 +21,7 @@ public class AutoBoxListFail {
     private static final String expectedOutput = "[-3, -2, -1]";
 
     @Test
-    public void shouldPrintDifferentList(){
+    public void wontPrintTheSameList(){
         Set<Integer> set = new TreeSet<Integer>();
         List<Integer> list = new ArrayList<Integer>();
 

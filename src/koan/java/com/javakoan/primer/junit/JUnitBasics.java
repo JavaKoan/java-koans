@@ -75,7 +75,7 @@ public class JUnitBasics {
     }
 
     @Test
-    public void shouldDemonstrateFail(){
+    public void wontPass(){
         fail();
     }
 
