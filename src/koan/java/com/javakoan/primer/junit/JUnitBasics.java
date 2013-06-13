@@ -16,13 +16,13 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-
 /**
- * Created with IntelliJ IDEA.
- * User: nicholas_smith
- * Date: 11/06/13
- * Time: 13:40
- * To change this template use File | Settings | File Templates.
+ * This Koan will help you meditate on the JUnit basics required for the exercises
+ *
+ * Right clicking on a method and selecting "Run..." will allow you to execute an individual test in most IDEs
+ *
+ * Right clicking at the class level and selecting "Run..." will allows you to run all tests
+ *
  */
 public class JUnitBasics {
 
@@ -38,8 +38,9 @@ public class JUnitBasics {
     @Test
     public void shouldDemonstrateAssertSame(){
         Integer a = new Integer(1);
+        Integer b = a;
 
-        assertSame(a, a);
+        assertSame(a, b);
     }
 
     @Test
@@ -56,6 +57,7 @@ public class JUnitBasics {
         boolean isTrue = true;
 
         assertTrue(isTrue);
+        assertTrue(1 == 1);
     }
 
     @Test
@@ -87,6 +89,7 @@ public class JUnitBasics {
             fail();
         } catch(NullPointerException npe){
             assertTrue(npe instanceof NullPointerException);
+            // Assert something more meaningful here like expected message
         }
     }
 
@@ -111,4 +114,6 @@ public class JUnitBasics {
     }
 
     // Allows use of debugger.
+    // setUp & tearDown historic names before annotation based Before & After
+
 }
