@@ -1,4 +1,4 @@
-# Java Koans
+# Java Koans   (WIP - These are not the Koans your looking for)
 
 This is set of Koans intended to improve fundamental understanding of the Java programming language.
 
@@ -27,7 +27,9 @@ Related Material
 ----------------
 
 [Learning the Java Language](http://docs.oracle.com/javase/tutorial/java/index.html)
+
 [Essential Java Classes](http://docs.oracle.com/javase/tutorial/essential/index.html)
+
 [Collections](http://docs.oracle.com/javase/tutorial/collections/index.html)
 
 [Effective Java](http://books.google.co.uk/books?isbn=0132778041)
