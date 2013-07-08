@@ -10,7 +10,7 @@ Essentially a Koan is a problem to solve.
 
 Or from the [Wikipedia](http://en.wikipedia.org/wiki/K%C5%8Dan) article I think the most relevant explanation is:
 
-> Insight has to be demonstrated. A mere "answer" to a koan is not sufficient. The teacher is not looking for a specific answer, but for evidence that the disciple has grasped the state of mind expressed by the k?an itself.
+> Insight has to be demonstrated. A mere "answer" to a koan is not sufficient. The teacher is not looking for a specific answer, but for evidence that the disciple has grasped the state of mind expressed by the koan itself.
 
 I think this is particularly relevant to the field of programming.
 
