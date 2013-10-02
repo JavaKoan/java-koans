@@ -5,12 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 import patterns.observer.domain.Customer;
 import patterns.observer.domain.Magazine;
-import patterns.observer.domain.Paper;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,10 +26,8 @@ public class NewsKioskTest {
 
     private NewsKiosk newsKiosk;
 
-    private final int MAGAZINE_EDITION = 1;
-
+    private final int MAGAZINE_EDITION = 2;
     private final String MAGAZINE_CONTENT = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
-    private final String PAPER_CONTENT = "But I must explain to you how all this mistaken idea of";
 
     private final String TOM = "Tom";
     private final String DICK = "Dick";
@@ -40,28 +39,27 @@ public class NewsKioskTest {
     }
 
     @Test
-    public void shouldReadPaper(){
+    public void shouldReadMagazine(){
         Customer tom = new Customer(TOM);
 
-        Paper paper = new Paper(PAPER_CONTENT);
-        newsKiosk.newPaperPublished(paper);
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
 
-        tom.read(paper);
+        tom.read(magazine);
 
         String outputUnderTest = systemOutContent.toString().trim();
 
-        assertEquals(TOM + " is reading: " + PAPER_CONTENT, outputUnderTest);
+        assertEquals(TOM + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
     }
 
     @Test
-    public void shouldPushPaperToCustomer(){
+    public void shouldPushMagazineToCustomer(){
         HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
 
-        Paper paper = new Paper(PAPER_CONTENT);
-        newsKiosk.newPaperPublished(paper);
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine);
 
         String outputUnderTest = systemOutContent.toString().trim();
-        assertEquals(TOM + " is reading: " + PAPER_CONTENT, outputUnderTest);
+        assertEquals(TOM + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
     }
 
     @Test
@@ -69,10 +67,44 @@ public class NewsKioskTest {
         CollectionCustomer harry = new CollectionCustomer(HARRY, newsKiosk);
 
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
-        newsKiosk.newMagazinePublished(magazine);
+        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
 
         String outputUnderTest = systemOutContent.toString().trim();
         assertEquals(HARRY + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
+    }
+
+    @Test
+    public void shouldPushMagazineToTwoCustomers(){
+        HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
+        HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
+
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine);
+
+        String outputUnderTest = systemOutContent.toString().trim();
+
+        String tomIsReading = TOM + " is reading: " + MAGAZINE_CONTENT;
+        String harryIsReading = HARRY + " is reading: " + MAGAZINE_CONTENT;
+
+        assertTrue(outputUnderTest.contains(tomIsReading));
+        assertTrue(outputUnderTest.contains(harryIsReading));
+    }
+
+    @Test
+    public void shouldNotPushToDeliveryCustomer(){
+        HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
+        CollectionCustomer harry = new CollectionCustomer(HARRY, newsKiosk);
+
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
+
+        String tomIsReading = TOM + " is reading: " + MAGAZINE_CONTENT;
+        String harryIsReading = HARRY + " is reading: " + MAGAZINE_CONTENT;
+
+        String outputUnderTest = systemOutContent.toString().trim();
+
+        assertTrue(outputUnderTest.contains(harryIsReading));
+        assertFalse(outputUnderTest.contains(tomIsReading));
     }
 
     @Test
@@ -81,14 +113,14 @@ public class NewsKioskTest {
         HomeDeliveryCustomer dick = new HomeDeliveryCustomer(DICK, newsKiosk);
         HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
 
-        Paper paper = new Paper(PAPER_CONTENT);
-        newsKiosk.newPaperPublished(paper);
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine);
 
         String outputUnderTest = systemOutContent.toString().trim();
 
-        String expectedOutput = TOM + " is reading: " + PAPER_CONTENT + "\n" +
-                DICK + " is reading: " + PAPER_CONTENT + "\n" +
-                HARRY + " is reading: " + PAPER_CONTENT;
+        String expectedOutput = TOM + " is reading: " + MAGAZINE_CONTENT + "\n" +
+                DICK + " is reading: " + MAGAZINE_CONTENT + "\n" +
+                HARRY + " is reading: " + MAGAZINE_CONTENT;
 
         assertEquals(expectedOutput, outputUnderTest);
     }

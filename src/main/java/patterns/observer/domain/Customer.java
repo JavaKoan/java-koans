@@ -17,6 +17,6 @@ public class Customer {
 
     public void read(Publication publication){
         System.out.print(name + " is reading: ");
-        System.out.println(publication.read());
+        System.out.println(publication.getContent());
     }
 }

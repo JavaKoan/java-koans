@@ -1,7 +1,7 @@
-package patterns.observer.ex2;
+package patterns.strategy.ex1;
 
-import patterns.observer.domain.Magazine;
-import patterns.observer.domain.Publication;
+import patterns.strategy.domain.Magazine;
+import patterns.strategy.domain.Publication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * User: nicholas_smith
- * Date: 08/07/13
- * Time: 14:41
+ * Date: 09/07/13
+ * Time: 14:45
  * To change this template use File | Settings | File Templates.
  */
-public class NewsKiosk implements Subject {
+public class NewsKiosk implements Subject{
 
     private List<Observer> observers;
 
@@ -36,12 +36,23 @@ public class NewsKiosk implements Subject {
     @Override
     public void notifyObservers(Publication publication) {
         for(Observer observer : observers){
-            observer.update(publication);
+            observer.update(this, publication);
         }
     }
 
     public void newMagazinePublished(Magazine magazine){
+
         this.latestMagazine = magazine;
         notifyObservers(magazine);
+    }
+
+    public void newMagazinePublishedCollectionOnly(Magazine magazine){
+
+        this.latestMagazine = magazine;
+        notifyObservers(null);
+    }
+
+    public Magazine getLatestMagazine() {
+        return latestMagazine;
     }
 }

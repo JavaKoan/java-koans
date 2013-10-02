@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import patterns.observer.domain.Customer;
-import patterns.observer.domain.Paper;
+import patterns.observer.domain.Magazine;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -24,7 +24,8 @@ public class NewsKioskTest {
 
     private NewsKiosk newsKiosk;
 
-    private final String PAPER_CONTENT = "But I must explain to you how all this mistaken idea of";
+    private final int MAGAZINE_EDITION = 2;
+    private final String MAGAZINE_CONTENT = "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
 
     private final String TOM = "Tom";
 
@@ -34,52 +35,56 @@ public class NewsKioskTest {
     }
 
     @Test
-    public void shouldReadPaper(){
+    public void shouldReadMagazine(){
         Customer tom = new Customer(TOM);
 
-        Paper paper = new Paper(PAPER_CONTENT);
-        newsKiosk.newPaperPublished(paper);
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
 
-        tom.read(paper);
+        tom.read(magazine);
 
         String outputUnderTest = systemOutContent.toString().trim();
 
-        assertEquals(TOM + " is reading: " + PAPER_CONTENT, outputUnderTest);
+        assertEquals(TOM + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
     }
 
     @Test
-    public void shouldPushPaperToCustomer(){
+    public void shouldPushMagazineToCustomer(){
         HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
 
-        Paper paper = new Paper(PAPER_CONTENT);
-        newsKiosk.newPaperPublished(paper);
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine);
 
         String outputUnderTest = systemOutContent.toString().trim();
-        assertEquals(TOM + " is reading: " + PAPER_CONTENT, outputUnderTest);
+        assertEquals(TOM + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
     }
 
     @Test
-    public void shouldNotPushPaperToCustomerAfterRemoval(){
+    public void shouldNotPushMagazineToCustomerAfterRemoval(){
         HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
 
-        Paper paper = new Paper(PAPER_CONTENT);
-        newsKiosk.newPaperPublished(paper);
+        Magazine magazine1 = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine1);
 
         String outputUnderTest = systemOutContent.toString().trim();
-        assertEquals(TOM + " is reading: " + PAPER_CONTENT, outputUnderTest);
+        assertEquals(TOM + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
 
         newsKiosk.remove(tom);
         systemOutContent.reset();
 
-        Paper paper2 = new Paper(PAPER_CONTENT);
-        newsKiosk.newPaperPublished(paper2);
+        Magazine magazine2 = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine2);
 
         outputUnderTest = systemOutContent.toString().trim();
         assertEquals("", outputUnderTest);
     }
 
     @Test
-    public void shouldPushOneFinalPaperAfterRemoval(){
+    public void shouldAllowPullForCustomer(){
+        // TODO: Implement code of a collection/pull customer
+    }
+
+    @Test
+    public void shouldPushOneFinalMagazineAfterRemoval(){
         // TODO: Customers pay in advance so will get one last paper, before being un subscribed
     }
 

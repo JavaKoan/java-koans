@@ -1,7 +1,6 @@
 package patterns.observer.ex1;
 
 import patterns.observer.domain.Magazine;
-import patterns.observer.domain.Paper;
 
 import java.util.Observable;
 
@@ -16,9 +15,16 @@ public class NewsKiosk extends Observable {
 
     private Magazine latestMagazine;
 
-    private Paper latestPaper;
 
     public void newMagazinePublished(Magazine magazine){
+
+        this.latestMagazine = magazine;
+
+        setChanged();
+        notifyObservers(magazine);
+    }
+
+    public void newMagazinePublishedCollectionOnly(Magazine magazine){
 
         this.latestMagazine = magazine;
 
@@ -26,19 +32,7 @@ public class NewsKiosk extends Observable {
         notifyObservers();
     }
 
-    public void newPaperPublished(Paper paper){
-
-        this.latestPaper = paper;
-
-        setChanged();
-        notifyObservers(paper);
-    }
-
     public Magazine getLatestMagazine(){
         return latestMagazine;
-    }
-
-    public Paper getLatestPaper() {
-        return latestPaper;
     }
 }

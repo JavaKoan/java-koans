@@ -1,4 +1,4 @@
-package patterns.observer.domain;
+package patterns.strategy.domain;
 
 /**
  * Created with IntelliJ IDEA.
