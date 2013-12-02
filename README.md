@@ -44,4 +44,4 @@ Setting up Koans
 
 Author
 -------
-[Nick Smith](http://smithnicholas.wordpress.com)
+[Nick Smith](http://nicholaspaulsmith.com)
