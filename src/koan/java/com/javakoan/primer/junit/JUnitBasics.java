@@ -18,76 +18,97 @@ import static org.junit.Assert.fail;
 
 /**
  * This Koan will help you meditate on the JUnit basics required for the exercises
- *
+ * <p/>
  * Right clicking on a method and selecting "Run..." will allow you to execute an individual test in most IDEs
- *
+ * <p/>
  * Right clicking at the class level and selecting "Run..." will allows you to run all tests
- *
  */
 public class JUnitBasics {
 
-
+    /*
+     Test two objects are logically equal
+     */
     @Test
-    public void shouldDemonstrateAssertEquals(){
+    public void shouldDemonstrateAssertEquals() {
         BigDecimal a = new BigDecimal(1.0);
         BigDecimal b = new BigDecimal(1.0);
 
         assertEquals(a, b);
     }
 
+    /*
+     Test two objects have reference the same object
+     */
     @Test
-    public void shouldDemonstrateAssertSame(){
+    public void shouldDemonstrateAssertSame() {
         Integer a = new Integer(1);
         Integer b = a;
 
         assertSame(a, b);
     }
 
+    /*
+     Test two objects do not reference the same object
+     */
     @Test
-    public void shouldDemonstrateAssertNotSame(){
+    public void shouldDemonstrateAssertNotSame() {
         Integer a = new Integer(1);
         Integer b = new Integer(1);
 
         assertNotSame(a, b);
     }
 
-
+    /*
+     Test condition is true
+     */
     @Test
-    public void shouldDemonstrateAssertTrue(){
+    public void shouldDemonstrateAssertTrue() {
         boolean isTrue = true;
 
         assertTrue(isTrue);
-        assertTrue(1 == 1);
+        assertTrue(1 = 1);
     }
 
+    /*
+     Test condition is false
+     */
     @Test
-    public void shouldDemonstrateAssertFalse(){
+    public void shouldDemonstrateAssertFalse() {
         boolean isFalse = false;
 
         assertFalse(isFalse);
     }
 
+    /*
+     Test object is null
+     */
     @Test
-    public void shouldDemonstrateAssertNull(){
+    public void shouldDemonstrateAssertNull() {
         Object iAmNull = null;
 
         assertNull(iAmNull);
     }
 
+    /*
+     Force test to fail
+     */
     @Test
-    public void wontPass(){
+    public void wontPass() {
         fail();
     }
 
+    /*
+     Exception handling test paradigm
+     */
     @Test
-    public void shouldDemonstrateHandlingExceptionsWithTests(){
+    public void shouldDemonstrateHandlingExceptionsWithTests() {
 
         Integer iAmNull = null;
 
         try {
             iAmNull.intValue();
             fail();
-        } catch(NullPointerException npe){
+        } catch (NullPointerException npe) {
             assertTrue(npe instanceof NullPointerException);
             // Assert something more meaningful here like expected message
         }
@@ -95,8 +116,11 @@ public class JUnitBasics {
 
     private List<String> messages = new ArrayList<String>();
 
+    /*
+     Demonstrate setUp @Before is called before all tests
+     */
     @Test
-    public void shouldDemonstrateExecutionOrder(){
+    public void shouldDemonstrateExecutionOrder() {
         messages.add("Added During Test");
 
         assertEquals(messages.get(0), "Added Before Test");
@@ -104,12 +128,12 @@ public class JUnitBasics {
     }
 
     @Before
-    public void setUp(){
+    public void setUp() {
         messages.add("Added Before Test");
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         System.out.println("Test Complete");
     }
 
