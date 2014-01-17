@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertSame;
 
 /**
@@ -35,16 +34,17 @@ public class TypeErasureTest {
         assertSame("A", typeErasure.getFirstElement(strings));
     }
 
-    @Test
-    public void shouldReturnFirstInteger(){
-
-        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
-        assertSame(ONE, typeErasure.getFirstElement(integers));
-    }
-
-    @Test
-    public void shouldFailDifferentTypesCantBeEqual(){
-        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
-        assertEquals("1", typeErasure.getFirstElement(integers));
-    }
+//    Uncomment these tests to see how type erasure works in Java 1.6
+//    @Test
+//    public void shouldReturnFirstInteger(){
+//
+//        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
+//        assertSame(ONE, typeErasure.getFirstElement(integers));
+//    }
+//
+//    @Test
+//    public void shouldFailDifferentTypesCantBeEqual(){
+//        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
+//        assertEquals("1", typeErasure.getFirstElement(integers));
+//    }
 }

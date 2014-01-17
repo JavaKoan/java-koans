@@ -1,23 +1,31 @@
-package com.javakoan.primer.junit;
+package com.nps.primer.junit;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import static junit.framework.Assert.assertSame;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.sameInstance;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
- * This Koan will help you meditate on the JUnit basics required for the exercises
+ * Primer for JUnit.  Basics required for the exercises
  * <p/>
  * Right clicking on a method and selecting "Run..." will allow you to execute an individual test in most IDEs
  * <p/>
@@ -30,10 +38,13 @@ public class JUnitBasics {
      */
     @Test
     public void shouldDemonstrateAssertEquals() {
+
         BigDecimal a = new BigDecimal(1.0);
         BigDecimal b = new BigDecimal(1.0);
 
-        assertEquals(a, b);
+        assertEquals(a, b); // Pure Junit
+        assertThat(a, equalTo(b)); // Hamcrest equivalent
+        assertThat(a, is(b)); // Hamcrest equivalent
     }
 
     /*
@@ -44,7 +55,8 @@ public class JUnitBasics {
         Integer a = new Integer(1);
         Integer b = a;
 
-        assertSame(a, b);
+        assertSame(a, b); // JUnit
+        assertThat(a, sameInstance(b)); // Hamcrest equivalent
     }
 
     /*
@@ -56,6 +68,7 @@ public class JUnitBasics {
         Integer b = new Integer(1);
 
         assertNotSame(a, b);
+        assertThat(a, not(sameInstance(b)));
     }
 
     /*
@@ -63,10 +76,10 @@ public class JUnitBasics {
      */
     @Test
     public void shouldDemonstrateAssertTrue() {
-        boolean isTrue = true;
+        boolean a = true;
 
-        assertTrue(isTrue);
-        assertTrue(1 = 1);
+        assertTrue(a);
+        assertThat(a, is(true));
     }
 
     /*
@@ -74,9 +87,10 @@ public class JUnitBasics {
      */
     @Test
     public void shouldDemonstrateAssertFalse() {
-        boolean isFalse = false;
+        boolean b = false;
 
-        assertFalse(isFalse);
+        assertFalse(b);
+        assertThat(b, not(true));
     }
 
     /*
@@ -87,12 +101,13 @@ public class JUnitBasics {
         Object iAmNull = null;
 
         assertNull(iAmNull);
+        assertThat(iAmNull, nullValue());
     }
 
     /*
      Force test to fail
      */
-    @Test
+    @Test @Ignore
     public void wontPass() {
         fail();
     }
@@ -110,7 +125,8 @@ public class JUnitBasics {
             fail();
         } catch (NullPointerException npe) {
             assertTrue(npe instanceof NullPointerException);
-            // Assert something more meaningful here like expected message
+            assertThat(npe, instanceOf(NullPointerException.class));
+            // In a real test assert something more meaningful here like expected message
         }
     }
 
@@ -134,10 +150,11 @@ public class JUnitBasics {
 
     @After
     public void tearDown() {
-        System.out.println("Test Complete");
+//        Uncomment to execute after every test
+//        System.out.println("Test Complete");
     }
 
-    // Allows use of debugger.
-    // setUp & tearDown historic names before annotation based Before & After
+// Allows use of debugger.
+// setUp & tearDown historic names before annotation based Before & After
 
 }

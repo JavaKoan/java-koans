@@ -10,7 +10,7 @@ import static junit.framework.Assert.fail;
 
 public class FunWithFloats {
 
-    private FloatingShop floatingShop = new FloatingShop();
+    private SweetShop sweetShop = new SweetShop();
 
     @Test
     public void shouldProduce100000(){
@@ -63,7 +63,7 @@ public class FunWithFloats {
 
         double cash = 1.00;
 
-        int noItems = floatingShop.howManySweetsCanIAffordForADouble(cash);
+        int noItems = sweetShop.howManySweetsCanIAffordForADouble(cash);
 
         assertEquals(4, noItems);
     }
@@ -73,7 +73,7 @@ public class FunWithFloats {
 
         BigDecimal cash = new BigDecimal("1.00");
 
-        int noItems = floatingShop.howManySweetsCanIAffordForABigDecimal(cash);
+        int noItems = sweetShop.howManySweetsCanIAffordForABigDecimal(cash);
 
         assertEquals(4, noItems);
     }
@@ -83,7 +83,7 @@ public class FunWithFloats {
 
         int cash = 100;
 
-        int noItems = floatingShop.howManySweetsCanIAffordForAnInt(cash);
+        int noItems = sweetShop.howManySweetsCanIAffordForAnInt(cash);
 
         assertEquals(4, noItems);
     }

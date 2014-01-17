@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  * Time: 10:09
  * To change this template use File | Settings | File Templates.
  */
-public class FloatingShop {
+public class SweetShop {
 
     public int howManySweetsCanIAffordForADouble(double cash){
         final double TEN_CENTS = 0.10;

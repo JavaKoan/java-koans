@@ -15,7 +15,7 @@ public class TypeErasure {
         return strings.get(0);
     }
 
-    public Integer getFirstElement(List<Integer> integers){  // Compilation error in 7 vs 6
-        return integers.get(0);
-    }
+//    public Integer getFirstElement(List<Integer> integers){  // Compilation error in 7 vs 6
+//        return integers.get(0);
+//    }
 }
