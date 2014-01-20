@@ -1,4 +1,4 @@
-package com.nps.primer.junit;
+package com.nps.koan.primer;
 
 import org.junit.After;
 import org.junit.Before;

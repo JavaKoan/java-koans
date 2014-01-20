@@ -1,0 +1,21 @@
+proveHowToInitializePrimitivesWithLiteralsAndGainInsightIntoDefaultValues
+[
+        byte8Bit = 100;
+        short16Bit = 100;
+        int32Bit = 100;
+        long64Bit = 100;
+        float32Bit = 100.00f;
+        double64bit = 100.00;
+        char16Bit = 'C';
+        bool = true;
+]
+
+proveEqualityForPrimitives
+[
+        valueA = 1;
+]
+
+proveBoxedPrimitivesAreUnBoxedForEvaluationWithPrimitive
+[
+        valueA = 999;
+]

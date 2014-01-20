@@ -1,0 +1,14 @@
+makeTheProductOfIAndJ
+[
+        product = i * j;
+]
+
+provideTheSolutionToTheProductOfIAndJ
+[
+        product = i * j;
+]
+
+shouldIgnoreWhenVexedAndEnlightened
+[
+        fail("This Koan should be ignored as it is both Vexed and Enlightened");
+]

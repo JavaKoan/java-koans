@@ -1,4 +1,4 @@
-package com.java.primitives;
+package com.nps.koan.primitives;
 
 import org.junit.Test;
 

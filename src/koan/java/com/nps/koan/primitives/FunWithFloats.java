@@ -1,5 +1,6 @@
-package com.java.primitives;
+package com.nps.koan.primitives;
 
+import com.java.primitives.SweetShop;
 import org.junit.Test;
 
 import java.math.BigDecimal;
