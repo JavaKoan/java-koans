@@ -1,13 +1,16 @@
 package com.nps.koan.primitives;
 
-import org.junit.Test;
+import com.nps.koan.fixture.KoanRunner;
+import com.nps.koan.fixture.annotation.Koan;
+import org.junit.runner.RunWith;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,14 +19,18 @@ import static org.junit.Assert.assertEquals;
  * Time: 16:12
  * To change this template use File | Settings | File Templates.
  */
+@RunWith(KoanRunner.class)
 public class AutoBoxListFail {
 
-    private static final String expectedOutput = "[-3, -2, -1]";
 
-    @Test
-    public void wontPrintTheSameList(){
-        Set<Integer> set = new TreeSet<Integer>();
-        List<Integer> list = new ArrayList<Integer>();
+    /**
+     * Meditate on the difference between removing elements from a Set and List.
+     */
+    @Koan
+    public void reflectOnTheDifferencesBetweenCollectionImplementationsWhenRemovingItems(){
+
+        Set<Integer> set = new TreeSet<>();
+        List<Integer> list = new ArrayList<>();
 
         for (int i = -3; i < 3; i++) {
             set.add(i);
@@ -35,33 +42,24 @@ public class AutoBoxListFail {
             list.remove(i);
         }
 
-        assertEquals(expectedOutput, set.toString());
-        assertEquals(expectedOutput, list.toString());
+        String expectedSetOutput = "";
+        String expectedListOutput = "";
+
+        /* (@_@) */
+
+        /* (^_^) */
+
+        assertThat(set.toString(), is(expectedSetOutput));
+        assertThat(list.toString(), is(expectedListOutput));
     }
 
-    @Test
-    public void shouldPrintSameListWithCast(){
-        Set<Integer> set = new TreeSet<Integer>();
-        List<Integer> list = new ArrayList<Integer>();
-
-        for (int i = -3; i < 3; i++) {
-            set.add(i);
-            list.add(i);
-        }
-
-        for (int i = 0; i < 3; i++) {
-            set.remove(i);
-            list.remove((Integer)i);
-        }
-
-        assertEquals(expectedOutput, set.toString());
-        assertEquals(expectedOutput, list.toString());
-    }
-
-    @Test
-    public void shouldPrintSameListWithValueOf(){
+    /**
+     * Meditate on how to remove the actual object from a List.
+     */
+    @Koan
+    public void reflectOnHowToRemoveElementsInAListWithCasting(){
         Set<Integer> set = new TreeSet<>();
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
 
         for (int i = -3; i < 3; i++) {
             set.add(i);
@@ -69,11 +67,39 @@ public class AutoBoxListFail {
         }
 
         for (int i = 0; i < 3; i++) {
-            set.remove(i);
-            list.remove(Integer.valueOf(i));
+            /* (@_@) */
+
+            /* (^_^) */
         }
 
-        assertEquals(expectedOutput, set.toString());
-        assertEquals(expectedOutput, list.toString());
+        String expectedOutput = "[-3, -2, -1]";
+
+        assertThat(set.toString(), is(expectedOutput));
+        assertThat(list.toString(), is(expectedOutput));
+    }
+
+    /**
+     * Meditate further on how to remove the actual object from a List.
+     */
+    @Koan
+    public void reflectOnHowToRemoveElementsInAListWithValueOf(){
+        Set<Integer> set = new TreeSet<>();
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = -3; i < 3; i++) {
+            set.add(i);
+            list.add(i);
+        }
+
+        for (int i = 0; i < 3; i++) {
+            /* (@_@) */
+
+            /* (^_^) */
+        }
+
+        String expectedOutput = "[-3, -2, -1]";
+
+        assertThat(set.toString(), is(expectedOutput));
+        assertThat(list.toString(), is(expectedOutput));
     }
 }
