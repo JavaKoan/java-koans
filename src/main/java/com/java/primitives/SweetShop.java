@@ -11,8 +11,8 @@ import java.math.BigDecimal;
  */
 public class SweetShop {
 
-    public int howManySweetsCanIAffordForADouble(double cash){
-        final double TEN_CENTS = 0.10;
+    public int howManySweetsCanIAffordForAFloat(float cash){
+        final float TEN_CENTS = 0.10f;
 
         int itemsBought = 0;
         double price = TEN_CENTS;

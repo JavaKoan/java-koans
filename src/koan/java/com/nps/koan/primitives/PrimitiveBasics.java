@@ -1,11 +1,8 @@
 package com.nps.koan.primitives;
 
-import com.nps.koan.KoanRunner;
-import com.nps.koan.annotation.Koan;
+import com.nps.koan.fixture.KoanRunner;
+import com.nps.koan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -30,7 +27,7 @@ public class PrimitiveBasics {
     char char16Bit; boolean bool;
 
     @Koan
-    public void proveHowToInitializePrimitivesWithLiteralsAndGainInsightIntoDefaultValues(){
+    public void reflectOnHowToInitializePrimitivesWithLiteralsAndGainInsightIntoDefaultValues(){
 
         /* (@_@)  Begin Meditation */
         byte8Bit = 100;
@@ -55,7 +52,7 @@ public class PrimitiveBasics {
 
 
     @Koan
-    public void proveMinimumAndMaximumByteValues(){
+    public void reflectOnMinimumAndMaximumByteValues(){
         byte maximumByteValue = 0;
         byte minimumByteValue = 0;
 
@@ -74,7 +71,7 @@ public class PrimitiveBasics {
     // 0x7fffffff
     // http://www.escapistmagazine.com/forums/read/7.829855-GTA-V-2-147-483-647-Glitch-Could-Wipe-Your-Cash-Away
     @Koan
-    public void proveMinimumAndMaximumIntValues(){
+    public void reflectOnMinimumAndMaximumIntValues(){
 
         int maximumIntValue = 0;
         int minimumIntValue = 0;
@@ -89,7 +86,7 @@ public class PrimitiveBasics {
     }
 
     @Koan
-    public void proveMinimumAndMaximumDoubleValues(){
+    public void reflectOnMinimumAndMaximumDoubleValues(){
         double maximumDoubleValue = 0;
         double minimumDoubleValue = 0;
 
@@ -103,7 +100,7 @@ public class PrimitiveBasics {
     }
 
     @Koan
-    public void proveCharactersAlsoHaveMinimumAndMaximumValues(){
+    public void reflectOnCharactersAlsoHaveMinimumAndMaximumValues(){
         char maximumCharValue = '\u0001';
         char minimumCharValue = '\u0001';
 
@@ -117,7 +114,7 @@ public class PrimitiveBasics {
     }
 
     @Koan
-    public void proveBooleans(){
+    public void reflectOnCharMinimumAndMaximumValues(){
         char maximumCharValue = '\u0001';
         char minimumCharValue = '\u0001';
 
@@ -131,7 +128,7 @@ public class PrimitiveBasics {
     }
 
     @Koan
-    public void proveEqualityForPrimitives(){
+    public void reflectOnEqualityForPrimitives(){
         int valueA = 0;
         int valueB = 1;
 
@@ -143,7 +140,7 @@ public class PrimitiveBasics {
     }
 
     @Koan
-    public void proveBoxedPrimitivesAreUnBoxedForEvaluationWithPrimitive(){
+    public void reflectOnBoxedPrimitivesAreUnBoxedForEvaluationWithPrimitive(){
         Integer valueA = null;
         int valueB = 999;
 
@@ -157,7 +154,7 @@ public class PrimitiveBasics {
 
 
     @Koan
-    public void proveTwoBoxedPrimitivesEvaluateByReference(){
+    public void reflectOnTwoBoxedPrimitivesEvaluateByReference(){
         Integer valueA = 999;
         Integer valueB = 555;
 
@@ -169,7 +166,7 @@ public class PrimitiveBasics {
     }
 
     @Koan
-    public void proveEqualityForBoxedPrimitives(){
+    public void reflectOnEqualityForBoxedPrimitives(){
         Double valueA = 1.00;
         Double valueB = 0.00;
 
@@ -182,7 +179,7 @@ public class PrimitiveBasics {
 
     // Cached reference -128 to 127  http://tech.puredanger.com/2007/02/01/valueof/
     @Koan
-    public void proveIntegersHaveCachedValues(){
+    public void reflectOnIntegersHaveCachedValues(){
         Integer valueA = 1;
         Integer valueB = 0;
 
@@ -194,7 +191,7 @@ public class PrimitiveBasics {
     }
 
     @Koan
-    public void proveDifferentObjectIdsForBoxedPrimitives(){
+    public void reflectOnDifferentObjectIdsForBoxedPrimitives(){
         Integer valueA = 200;
         Integer valueB = 0;
 
@@ -208,7 +205,7 @@ public class PrimitiveBasics {
     static Integer boxedInt;
 
     @Koan
-    public void proveThrowNullPointerWhenUnboxingInteger(){
+    public void reflectOnNullPointersWhenUnboxingIntegers(){
 
         try {
             /* (@_@)  */
@@ -216,7 +213,7 @@ public class PrimitiveBasics {
                 fail("Should have thrown null pointer");
             }
             /* (^_^)  */
-        } catch (Exception e){
+        } catch (NullPointerException e){
             assertTrue(e instanceof NullPointerException);
         }
 
@@ -225,37 +222,41 @@ public class PrimitiveBasics {
     static int primitiveInt;
 
     @Koan
-    public void proveNotThrowNullPointerWhenFavouringAPrimitive(){
+    public void reflectOnSaferToFavouringAPrimitive(){
 
         try {
+            /* (@_@) */
             if(primitiveInt != 0){
                 fail("Uninitialised int should be zero");
             }
+            /* (^_^) */
         } catch (Exception e){
             fail("Should not have thrown an exception");
         }
     }
 
     @Koan
-    public void proveDemonstrateUnnecessaryBoxingTakesALongTime(){
-        Long sum = 0L;
-        for (long i = 0; i < Integer.MAX_VALUE; i++) {
-            sum += i;
-        }
-    }
-
-    @Koan
-    public void shouldDemonstrateUsingPrimitivesCanImprovePerformance(){
+    public void reflectOnUnnecessaryBoxingTakesALongTime(){
         long sum = 0L;
+        long sumStartTime = System.currentTimeMillis();
         for (long i = 0; i < Integer.MAX_VALUE; i++) {
             sum += i;
         }
+        long sumDuration = System.currentTimeMillis() - sumStartTime;
+
+        Long boxedSum = 0L;
+        long boxedSumStartTime = System.currentTimeMillis();
+
+        /* (@_@) */
+        for (long i = 0; i < Integer.MAX_VALUE; i++) {
+            boxedSum += i;
+        }
+        long boxedSumDuration = System.currentTimeMillis() - boxedSumStartTime;
+        /* (^_^) */
+
+        System.out.println("boxedSumDuration: " + boxedSumDuration + " sumDuration: " + sumDuration);
+
+        assertTrue(boxedSumDuration > sumDuration);
     }
 
-    @Koan
-    public void proveShowYouHaveToUseBoxedPrimitivesInCollections(){
-
-        //List<int> compileError = new ArrayList<int>();
-        List<Integer> integerList = new ArrayList<Integer>();
-    }
 }

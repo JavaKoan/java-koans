@@ -1,14 +1,14 @@
-makeTheProductOfIAndJ
+reflectOnTheProductOfIAndJ
 [
         product = i * j;
 ]
 
-provideTheSolutionToTheProductOfIAndJ
+reflectOnProvidingTheSolutionToTheProductOfIAndJ
 [
         product = i * j;
 ]
 
-shouldIgnoreWhenVexedAndEnlightened
+reflectOneIgnoringWhenVexedAndEnlightened
 [
         fail("This Koan should be ignored as it is both Vexed and Enlightened");
 ]

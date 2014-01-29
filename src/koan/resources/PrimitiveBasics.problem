@@ -1,0 +1,4 @@
+proveSaferFavouringAPrimitive
+[
+            fail("Uninitialised int should be zero");
+]

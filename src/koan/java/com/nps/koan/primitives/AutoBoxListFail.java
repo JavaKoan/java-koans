@@ -60,7 +60,7 @@ public class AutoBoxListFail {
 
     @Test
     public void shouldPrintSameListWithValueOf(){
-        Set<Integer> set = new TreeSet<Integer>();
+        Set<Integer> set = new TreeSet<>();
         List<Integer> list = new ArrayList<Integer>();
 
         for (int i = -3; i < 3; i++) {

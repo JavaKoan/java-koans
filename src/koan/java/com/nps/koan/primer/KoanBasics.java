@@ -1,9 +1,9 @@
 package com.nps.koan.primer;
 
-import com.nps.koan.KoanRunner;
-import com.nps.koan.annotation.Enlighten;
-import com.nps.koan.annotation.Koan;
-import com.nps.koan.annotation.Vex;
+import com.nps.koan.fixture.KoanRunner;
+import com.nps.koan.fixture.annotation.Enlighten;
+import com.nps.koan.fixture.annotation.Koan;
+import com.nps.koan.fixture.annotation.Vex;
 import org.junit.runner.RunWith;
 
 import static junit.framework.Assert.fail;
@@ -22,14 +22,14 @@ public class KoanBasics {
      * Grasshoppers should meditate on how to make the product int equal to 50.
      */
     @Koan
-    public void makeTheProductOfIAndJ(){
+    public void reflectOnTheProductOfIAndJ(){
         int i = 10;
         int j = 5;
         int product = 0;
 
-        /* (@_@) */
+        /* (@_@) Your code starts here */
         product = i * j;
-        /* (^_^) */
+        /* (^_^) Your code ends here */
 
         assertThat(product, is(50));
     }
@@ -37,8 +37,8 @@ public class KoanBasics {
     /**
      * Grasshoppers should use this koan to understand how to reach enlightenment
      */
-    @Koan @Enlighten
-    public void provideTheSolutionToTheProductOfIAndJ(){
+    @Koan
+    public void reflectOnProvidingTheSolutionToTheProductOfIAndJ(){
         int i = 10;
         int j = 5;
         int product = 0;
@@ -54,7 +54,7 @@ public class KoanBasics {
      * Grasshoppers should use this koan to understand that koans with start and end markers are ignored.
      */
     @Koan
-    public void shouldIgnoreIfKoanDoesNotHaveStartAndEnd(){
+    public void reflectOnIgnoringIfKoanDoesNotHaveStartAndEnd(){
         fail("This Koan should be ignored as it has no start (@_@) and end (^_^) markers");
     }
 
@@ -62,7 +62,7 @@ public class KoanBasics {
      * Grasshoppers should use this koan to understand that one cannot be Vexed and Enlightened at the same time.
      */
     @Koan @Vex @Enlighten
-    public void shouldIgnoreWhenVexedAndEnlightened(){
+    public void reflectOneIgnoringWhenVexedAndEnlightened(){
         /* (@_@) */
         fail("This Koan should be ignored as it is both Vexed and Enlightened");
         /* (^_^) */

@@ -1,0 +1,34 @@
+reflectOnProducingTheStringValue100000
+[
+        stringValue = String.valueOf(f*10);
+]
+
+reflectOnProducingTheStringValueInfinity
+[
+        stringValue = String.valueOf(d * 10);
+]
+
+reflectOnProducingTheStringValueNaN
+[
+        stringValue = String.valueOf(d / d);
+]
+
+reflectOnHowAnArithmeticExceptionCanOccur
+[
+            toCauseException = toCauseException / 0;
+]
+
+reflectOnFloatBeingAPoorChoiceToRepresentCurrency
+[
+        expectedNumberOfSweets = 3;
+]
+
+reflectOnBigDecimalBeingABetterChoiceForCurrency
+[
+        expectedNumberOfSweets = 4;
+]
+
+reflectOnIntBeingABetterAndMoreEfficientChoiceForCurrency
+[
+        expectedNumberOfSweets = 4;
+]
