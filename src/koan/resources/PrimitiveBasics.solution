@@ -1,4 +1,4 @@
-proveHowToInitializePrimitivesWithLiteralsAndGainInsightIntoDefaultValues
+reflectOnHowToAssignPrimitiveValuesWithLiteralsAndGainInsightIntoDefaultValues
 [
         byte8Bit = 100;
         short16Bit = 100;
@@ -10,12 +10,72 @@ proveHowToInitializePrimitivesWithLiteralsAndGainInsightIntoDefaultValues
         bool = true;
 ]
 
-proveEqualityForPrimitives
+reflectOnMinimumAndMaximumByteValues
+[
+        maximumByteValue = Byte.MAX_VALUE;
+        minimumByteValue = Byte.MIN_VALUE;
+]
+
+reflectOnMinimumAndMaximumIntValues
+[
+        maximumIntValue = Integer.MAX_VALUE;
+        minimumIntValue = Integer.MIN_VALUE;
+]
+
+reflectOnMinimumAndMaximumDoubleValues
+[
+        maximumDoubleValue = Double.MAX_VALUE;
+        minimumDoubleValue = Double.MIN_VALUE;
+]
+
+reflectOnCharactersAlsoHaveMinimumAndMaximumValues
+[
+        maximumCharValue = '\uffff';
+        minimumCharValue = '\u0000';
+]
+
+reflectOnEqualityForPrimitives
 [
         valueA = 1;
 ]
 
-proveBoxedPrimitivesAreUnBoxedForEvaluationWithPrimitive
+reflectOnBoxedPrimitivesAreUnBoxedForEvaluationWithPrimitive
 [
         valueA = 999;
+]
+
+reflectOnEqualityForBoxedPrimitives
+[
+        valueB = 1.00;
+]
+
+reflectOnIntegersHaveCachedValues
+[
+        valueB = 1;
+]
+
+reflectOnDifferentObjectIdsForBoxedPrimitives
+[
+        valueB = 200;
+]
+
+reflectOnNullPointersWhenUnboxingIntegers
+[
+            if(boxedInt > 9){
+                fail("Should have thrown null pointer");
+            }
+]
+
+reflectOnSaferToFavouringAPrimitive
+[
+            if(primitiveInt != 0){
+                fail("Uninitialised int should be zero");
+            }
+]
+
+reflectOnUnnecessaryBoxingTakesALongTime
+[
+        for (long i = 0; i < Integer.MAX_VALUE; i++) {
+            boxedSum += i;
+        }
 ]

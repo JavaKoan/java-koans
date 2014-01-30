@@ -26,18 +26,14 @@ public class PrimitiveBasics {
     byte byte8Bit; short short16Bit; int int32Bit; long long64Bit; float float32Bit; double double64bit;
     char char16Bit; boolean bool;
 
+    /**
+     * Meditate on how to assign values to each primitive type so it is not longer represented by its default value
+     */
     @Koan
-    public void reflectOnHowToInitializePrimitivesWithLiteralsAndGainInsightIntoDefaultValues(){
+    public void reflectOnHowToAssignPrimitiveValuesWithLiteralsAndGainInsightIntoDefaultValues(){
 
         /* (@_@)  Begin Meditation */
-        byte8Bit = 100;
-        short16Bit = 100;
-        int32Bit = 100;
-        long64Bit = 100;
-        float32Bit = 100.00f;
-        double64bit = 100.00;
-        char16Bit = 'C';
-        bool = true;
+
         /* (^_^)  Complete Meditation */
 
         assertThat(byte8Bit, is(not((byte)0)));
@@ -51,14 +47,16 @@ public class PrimitiveBasics {
     }
 
 
+    /**
+     * Meditate on how to use constants in the Byte class to initialise maximum and minimum byte values
+     */
     @Koan
     public void reflectOnMinimumAndMaximumByteValues(){
         byte maximumByteValue = 0;
         byte minimumByteValue = 0;
 
         /* (@_@)  */
-        maximumByteValue = Byte.MAX_VALUE;
-        minimumByteValue = Byte.MIN_VALUE;
+
         /* (^_^)  */
 
         assertThat(maximumByteValue, is((byte)127));
@@ -66,10 +64,11 @@ public class PrimitiveBasics {
     }
 
 
-    // -2,147,483,648 to 2,147,483,647
-    // 2^31 -1
-    // 0x7fffffff
-    // http://www.escapistmagazine.com/forums/read/7.829855-GTA-V-2-147-483-647-Glitch-Could-Wipe-Your-Cash-Away
+    /**
+     * Meditate on the maximum and minimum values of integers and how it might be important for you digital persona:
+     * http://www.escapistmagazine.com/forums/read/7.829855-GTA-V-2-147-483-647-Glitch-Could-Wipe-Your-Cash-Away
+     * Also muse on 2^31-1 and 0x7fffffff
+     */
     @Koan
     public void reflectOnMinimumAndMaximumIntValues(){
 
@@ -77,164 +76,156 @@ public class PrimitiveBasics {
         int minimumIntValue = 0;
 
         /* (@_@)  */
-        maximumIntValue = Integer.MAX_VALUE;
-        minimumIntValue = Integer.MIN_VALUE;
+
         /* (^_^)  */
 
         assertThat(maximumIntValue, is(2147483647));
         assertThat(minimumIntValue, is(-2147483648));
     }
 
+    /**
+     * Meditate on how to use constants in the Double class to initialise maximum and minimum double values
+     */
     @Koan
     public void reflectOnMinimumAndMaximumDoubleValues(){
         double maximumDoubleValue = 0;
         double minimumDoubleValue = 0;
 
         /* (@_@)  */
-        maximumDoubleValue = Double.MAX_VALUE;
-        minimumDoubleValue = Double.MIN_VALUE;
+
         /* (^_^)  */
 
         assertThat(maximumDoubleValue, is(1.7976931348623157e+308));
         assertThat(minimumDoubleValue, is(4.9e-324));
     }
 
+
+    /**
+     * Meditate on the character literals maximum and minimum values using the UTF character set
+     */
     @Koan
     public void reflectOnCharactersAlsoHaveMinimumAndMaximumValues(){
         char maximumCharValue = '\u0001';
         char minimumCharValue = '\u0001';
 
         /* (@_@)  */
-        maximumCharValue = Character.MAX_VALUE;
-        minimumCharValue = Character.MIN_VALUE;
+
         /* (^_^)  */
 
-        assertThat(maximumCharValue, is('\uffff'));
-        assertThat(minimumCharValue, is('\u0000'));
+        assertThat(maximumCharValue, is(Character.MAX_VALUE));
+        assertThat(minimumCharValue, is(Character.MIN_VALUE));
     }
 
-    @Koan
-    public void reflectOnCharMinimumAndMaximumValues(){
-        char maximumCharValue = '\u0001';
-        char minimumCharValue = '\u0001';
-
-        /* (@_@)  */
-        maximumCharValue = Character.MAX_VALUE;
-        minimumCharValue = Character.MIN_VALUE;
-        /* (^_^)  */
-
-        assertThat(maximumCharValue, is('\uffff'));
-        assertThat(minimumCharValue, is('\u0000'));
-    }
-
+    /**
+     *  Meditate on what equality constitutes with regards to primitive types
+     */
     @Koan
     public void reflectOnEqualityForPrimitives(){
         int valueA = 0;
         int valueB = 1;
 
         /* (@_@)  */
-        valueA = 1;
         /* (^_^)  */
 
         assertEquals(valueA, valueB);
     }
 
+    /**
+     *  Meditate on what equality constitutes when comparing primitives and boxed primitives
+     */
     @Koan
     public void reflectOnBoxedPrimitivesAreUnBoxedForEvaluationWithPrimitive(){
-        Integer valueA = null;
+        Integer valueA = 555;
         int valueB = 999;
 
         /* (@_@)  */
-        valueA = 999;
         /* (^_^)  */
 
         assertTrue(valueA == valueB);
         assertTrue(valueA.intValue() == valueB);
     }
 
-
-    @Koan
-    public void reflectOnTwoBoxedPrimitivesEvaluateByReference(){
-        Integer valueA = 999;
-        Integer valueB = 555;
-
-        /* (@_@)  */
-        valueB = 999;
-        /* (^_^)  */
-
-        assertTrue(valueA != valueB);
-    }
-
+    /**
+     *  Meditate on what equality constitutes boxed primitives
+     */
     @Koan
     public void reflectOnEqualityForBoxedPrimitives(){
         Double valueA = 1.00;
         Double valueB = 0.00;
 
         /* (@_@)  */
-        valueB = 1.00;
         /* (^_^)  */
 
         assertEquals(valueA, valueB);
     }
 
-    // Cached reference -128 to 127  http://tech.puredanger.com/2007/02/01/valueof/
+    /**
+     *  Mediate on integers having cached references between -128 to 127
+     *  http://tech.puredanger.com/2007/02/01/valueof/
+     */
     @Koan
     public void reflectOnIntegersHaveCachedValues(){
         Integer valueA = 1;
         Integer valueB = 0;
 
         /* (@_@)  */
-        valueB = 1;
         /* (^_^)  */
 
         assertTrue(valueA == valueB);
     }
 
+    /**
+     *  Mediate on integers outside the range of -128 to 127 do not have the same object reference ... as one might expect
+     */
     @Koan
     public void reflectOnDifferentObjectIdsForBoxedPrimitives(){
         Integer valueA = 200;
-        Integer valueB = 0;
+        Integer valueB = valueA;
 
         /* (@_@)  */
-        valueB = 200;
         /* (^_^)  */
 
         assertFalse(valueA == valueB);
     }
 
-    static Integer boxedInt;
-
+    /**
+     *  Meditate on the default initialization of objects as class variables and the potential dangers.
+     *  Hint: Prevent the fail method being called, by causing a null pointer exception.
+     */
+    private Integer boxedInt;
     @Koan
     public void reflectOnNullPointersWhenUnboxingIntegers(){
 
         try {
             /* (@_@)  */
-            if(boxedInt > 9){
                 fail("Should have thrown null pointer");
-            }
             /* (^_^)  */
         } catch (NullPointerException e){
             assertTrue(e instanceof NullPointerException);
         }
-
     }
 
-    static int primitiveInt;
-
+    /**
+     *  Meditate on the default initialization of primitives as class variables and the potential benefits
+     *  Hint: Prevent the fail method being called, by using a clause on the value of primitiveInt.
+     */
+    private int primitiveInt;
     @Koan
     public void reflectOnSaferToFavouringAPrimitive(){
 
         try {
             /* (@_@) */
-            if(primitiveInt != 0){
-                fail("Uninitialised int should be zero");
-            }
+                fail("Prevent failure by placing this code in a clause using primitiveInt");
             /* (^_^) */
         } catch (Exception e){
             fail("Should not have thrown an exception");
         }
     }
 
+    /**
+     * Meditate on unnecessary boxing causes program execution to take longer.
+     * Hint: Create a for loop using the boxed Long instance variable in the same way the primitive is used
+     */
     @Koan
     public void reflectOnUnnecessaryBoxingTakesALongTime(){
         long sum = 0L;
@@ -248,11 +239,9 @@ public class PrimitiveBasics {
         long boxedSumStartTime = System.currentTimeMillis();
 
         /* (@_@) */
-        for (long i = 0; i < Integer.MAX_VALUE; i++) {
-            boxedSum += i;
-        }
-        long boxedSumDuration = System.currentTimeMillis() - boxedSumStartTime;
+
         /* (^_^) */
+        long boxedSumDuration = System.currentTimeMillis() - boxedSumStartTime;
 
         System.out.println("boxedSumDuration: " + boxedSumDuration + " sumDuration: " + sumDuration);
 

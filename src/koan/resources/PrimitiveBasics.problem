@@ -1,4 +1,9 @@
-proveSaferFavouringAPrimitive
+reflectOnNullPointersWhenUnboxingIntegers
 [
-            fail("Uninitialised int should be zero");
+                fail("Should have thrown null pointer");
+]
+
+reflectOnSaferToFavouringAPrimitive
+[
+                fail("Uninitialised int should be zero");
 ]
