@@ -9,8 +9,16 @@ package com.java.overriding;
  */
 public class Snoopy extends Beagle {
 
+    private static final Snoopy INSTANCE = new Snoopy();
+
+    private Snoopy(){}
+
     @Override
     public String bark() {
         return "yum-peanuts" ;
+    }
+
+    public static Snoopy getInstance(){
+        return INSTANCE;
     }
 }

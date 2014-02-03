@@ -21,7 +21,7 @@ public class KoanBasics {
     /**
      * Grasshoppers should meditate on how to make the product int equal to 50.
      */
-    @Koan
+    @Koan @Enlighten
     public void reflectOnTheProductOfIAndJ(){
         int i = 10;
         int j = 5;

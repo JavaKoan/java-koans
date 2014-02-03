@@ -1,0 +1,11 @@
+meditateThatOverloadingIsAssessedAtCompileTime
+[
+        secondDogClassification = "It's just some mongrel";
+        thirdDogClassification = "It's just some mongrel";
+]
+
+meditateOnHowToResolveOverloadingConfusion
+[
+        secondDogClassification = "It's a Beagle";
+        thirdDogClassification = "It's Snoopy!";
+]
