@@ -1,7 +1,9 @@
-package com.java.erasure;
+package com.nps.koan.generics;
 
-import org.junit.Before;
-import org.junit.Test;
+import com.java.generics.ListHelper;
+import com.nps.koan.fixture.KoanRunner;
+import com.nps.koan.fixture.annotation.Koan;
+import org.junit.runner.RunWith;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,36 +17,31 @@ import static junit.framework.Assert.assertSame;
  * Time: 09:04
  * To change this template use File | Settings | File Templates.
  */
-public class TypeErasureTest {
-
-    private TypeErasure typeErasure;
+@RunWith(KoanRunner.class)
+public class TypeErasure {
 
     private final Integer ONE = 1;
     private final Integer TWO = 2;
     private final Integer THREE = 3;
 
-    @Before
-    public void setUp(){
-        typeErasure = new TypeErasure();
-    }
-
-    @Test
+    @Koan
     public void shouldReturnFirstString(){
+        ListHelper listHelper = new ListHelper();
         List<String> strings = Arrays.asList("A", "B", "C");
-        assertSame("A", typeErasure.getFirstElement(strings));
+        assertSame("A", listHelper.getFirstElement(strings));
     }
 
-//    Uncomment these tests to see how type erasure works in Java 1.6
+//    Uncomment these tests to see how type generics works in Java 1.6
 //    @Test
 //    public void shouldReturnFirstInteger(){
 //
 //        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
-//        assertSame(ONE, typeErasure.getFirstElement(integers));
+//        assertSame(ONE, listHelper.getFirstElement(integers));
 //    }
 //
 //    @Test
 //    public void shouldFailDifferentTypesCantBeEqual(){
 //        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
-//        assertEquals("1", typeErasure.getFirstElement(integers));
+//        assertEquals("1", listHelper.getFirstElement(integers));
 //    }
 }

@@ -1,4 +1,4 @@
-package com.java.erasure;
+package com.java.generics;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * Time: 09:03
  * To change this template use File | Settings | File Templates.
  */
-public class TypeErasure {
+public class ListHelper {
 
     public String getFirstElement(List<String> strings){
         return strings.get(0);
