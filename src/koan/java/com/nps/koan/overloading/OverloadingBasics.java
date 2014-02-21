@@ -4,8 +4,8 @@ import com.java.overloading.DogClassifier;
 import com.java.overriding.Beagle;
 import com.java.overriding.Dog;
 import com.java.overriding.Snoopy;
-import com.nps.koan.fixture.KoanRunner;
-import com.nps.koan.fixture.annotation.Koan;
+import com.nicholaspaulsmith.koan.fixture.KoanRunner;
+import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;
 
 import java.util.ArrayList;

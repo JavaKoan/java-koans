@@ -1,8 +1,8 @@
 package com.nps.koan.primitives;
 
 import com.java.primitives.SweetShop;
-import com.nps.koan.fixture.KoanRunner;
-import com.nps.koan.fixture.annotation.Koan;
+import com.nicholaspaulsmith.koan.fixture.KoanRunner;
+import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 

@@ -1,8 +1,8 @@
 package com.nps.koan.generics;
 
 import com.java.generics.ListHelper;
-import com.nps.koan.fixture.KoanRunner;
-import com.nps.koan.fixture.annotation.Koan;
+import com.nicholaspaulsmith.koan.fixture.KoanRunner;
+import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;
 
 import java.util.Arrays;

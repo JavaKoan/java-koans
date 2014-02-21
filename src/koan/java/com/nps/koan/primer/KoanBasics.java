@@ -1,9 +1,10 @@
 package com.nps.koan.primer;
 
-import com.nps.koan.fixture.KoanRunner;
-import com.nps.koan.fixture.annotation.Enlighten;
-import com.nps.koan.fixture.annotation.Koan;
-import com.nps.koan.fixture.annotation.Vex;
+
+import com.nicholaspaulsmith.koan.fixture.KoanRunner;
+import com.nicholaspaulsmith.koan.fixture.annotation.Enlighten;
+import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
+import com.nicholaspaulsmith.koan.fixture.annotation.Vex;
 import org.junit.runner.RunWith;
 
 import static junit.framework.Assert.fail;
@@ -21,7 +22,7 @@ public class KoanBasics {
     /**
      * Grasshoppers should meditate on how to make the product int equal to 50.
      */
-    @Koan @Enlighten
+    @Koan  @Enlighten
     public void reflectOnTheProductOfIAndJ(){
         int i = 10;
         int j = 5;

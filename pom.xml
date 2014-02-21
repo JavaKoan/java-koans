@@ -24,10 +24,9 @@
             <version>2.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.nps</groupId>
+            <groupId>com.nicholaspaulsmith</groupId>
             <artifactId>koan-annotations</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <classifier>jar-with-dependencies</classifier>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
