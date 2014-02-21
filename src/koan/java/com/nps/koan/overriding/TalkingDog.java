@@ -1,10 +1,10 @@
 package com.nps.koan.overriding;
 
-import com.java.overriding.Beagle;
-import com.java.overriding.Dog;
-import com.java.overriding.Snoopy;
-import com.nps.koan.fixture.KoanRunner;
-import com.nps.koan.fixture.annotation.Koan;
+import com.nps.java.overriding.Beagle;
+import com.nps.java.overriding.Dog;
+import com.nps.java.overriding.Snoopy;
+import com.nicholaspaulsmith.koan.fixture.KoanRunner;
+import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;
 
 import static org.hamcrest.MatcherAssert.assertThat;

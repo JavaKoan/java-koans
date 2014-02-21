@@ -1,0 +1,20 @@
+reflectOnUsingConstructorsToPreserveInvariants
+[
+        exceptionClass = IllegalArgumentException.class;
+]
+
+reflectOnBreakingThePeriodByMakingEndBeforeStart
+[
+        end.setTime(APRIL_1_2013.getTime());
+]
+
+reflectAgainOnCompromisingThePeriodByMakingEndBeforeStart
+[
+        brokenPeriod.getEnd().setTime(APRIL_1_2013.getTime());
+]
+
+reflectOnUsingDefensiveCopiesToPreserveClassInvariants
+[
+        startUnderMeditation = period.getStart();
+        endUnderMeditation = period.getEnd();
+]
