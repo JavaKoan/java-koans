@@ -1,0 +1,8 @@
+reflectOnCompileTimeSafetyOfGenerics
+[
+        try {
+            element = (String) strings.get(1);
+        } catch (ClassCastException e){
+            exceptionMessage = e.getMessage();
+        }
+]

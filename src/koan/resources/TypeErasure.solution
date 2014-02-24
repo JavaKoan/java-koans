@@ -1,0 +1,13 @@
+reflectOnAccessingAGenericizedType
+[
+        firstElement = strings.get(0);
+        secondElement = strings.get(1);
+        thirdElement = strings.get(2);
+]
+
+reflectOnWhatTheAboveCodeCompilesAs
+[
+        firstElement = (String) strings.get(0);
+        secondElement = (String) strings.get(1);
+        thirdElement = (String) strings.get(2);
+]

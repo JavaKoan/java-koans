@@ -1,14 +1,14 @@
 package com.nps.koan.generics;
 
-import com.nps.java.generics.ListHelper;
 import com.nicholaspaulsmith.koan.fixture.KoanRunner;
 import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
-import static junit.framework.Assert.assertSame;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,28 +20,50 @@ import static junit.framework.Assert.assertSame;
 @RunWith(KoanRunner.class)
 public class TypeErasure {
 
-    private final Integer ONE = 1;
-    private final Integer TWO = 2;
-    private final Integer THREE = 3;
-
+    /**
+     * Mediate on how to access elements of a gerericized type
+     */
     @Koan
-    public void shouldReturnFirstString(){
-        ListHelper listHelper = new ListHelper();
-        List<String> strings = Arrays.asList("A", "B", "C");
-        assertSame("A", listHelper.getFirstElement(strings));
+    public void reflectOnAccessingAGenericizedType(){
+        List<String> strings = new ArrayList<>();
+        strings.add("A");
+        strings.add("B");
+        strings.add("C");
+
+        String firstElement = null;
+        String secondElement = null;
+        String thirdElement = null;
+
+        // (@_@)
+
+        // (^_^)
+
+        assertThat(firstElement, is("A"));
+        assertThat(secondElement, is("B"));
+        assertThat(thirdElement, is("C"));
     }
 
-//    Uncomment these tests to see how type generics works in Java 1.6
-//    @Test
-//    public void shouldReturnFirstInteger(){
-//
-//        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
-//        assertSame(ONE, listHelper.getFirstElement(integers));
-//    }
-//
-//    @Test
-//    public void shouldFailDifferentTypesCantBeEqual(){
-//        List<Integer> integers = Arrays.asList(ONE, TWO, THREE);
-//        assertEquals("1", listHelper.getFirstElement(integers));
-//    }
+    /**
+     * Mediate on how to access elements of a non gerericized type and how this is the representation of the code after compilation.
+     */
+    @Koan
+    public void reflectOnWhatTheAboveCodeCompilesAs(){
+        List strings = new ArrayList();
+        strings.add("A");
+        strings.add("B");
+        strings.add("C");
+
+        String firstElement = null;
+        String secondElement = null;
+        String thirdElement = null;
+
+        // (@_@)
+
+        // (^_^)
+
+        assertThat(firstElement, is("A"));
+        assertThat(secondElement, is("B"));
+        assertThat(thirdElement, is("C"));
+    }
+
 }
