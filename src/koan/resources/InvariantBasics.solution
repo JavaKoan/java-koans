@@ -1,6 +1,6 @@
 reflectOnUsingConstructorsToPreserveInvariants
 [
-        exceptionClass = IllegalArgumentException.class;
+        messageUnderMeditation = "Start Must Be Before End";
 ]
 
 reflectOnBreakingThePeriodByMakingEndBeforeStart
@@ -17,4 +17,9 @@ reflectOnUsingDefensiveCopiesToPreserveClassInvariants
 [
         startUnderMeditation = period.getStart();
         endUnderMeditation = period.getEnd();
+]
+
+reflectOnHowTheJodaLibraryIsBetterThanJavaUtilDate
+[
+        messageUnderMeditation = "Start Must Be Before End";
 ]

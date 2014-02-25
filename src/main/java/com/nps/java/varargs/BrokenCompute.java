@@ -9,7 +9,7 @@ package com.nps.java.varargs;
  */
 public class BrokenCompute {
 
-    static int max(int... args) {
+    public static int max(int ... args) {
         int max = args[0];
         for (int i = 1; i < args.length; i++) {
             if (args[i] > max){

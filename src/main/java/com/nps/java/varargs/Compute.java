@@ -9,7 +9,7 @@ package com.nps.java.varargs;
  */
 public class Compute {
 
-    static int max(int firstArg, int... remainingArgs) {
+    public static int max(int firstArg, int... remainingArgs) {
         int max = firstArg;
         for (int arg : remainingArgs) {
             if (arg > max) {
@@ -18,5 +18,4 @@ public class Compute {
         }
         return max;
     }
-
 }

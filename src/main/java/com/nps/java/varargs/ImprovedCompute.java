@@ -9,7 +9,7 @@ package com.nps.java.varargs;
  */
 public class ImprovedCompute {
 
-    static int max(int... args) {
+    public static int max(int... args) {
         if (args.length == 0) {
             throw new IllegalArgumentException("Too few arguments");
         }

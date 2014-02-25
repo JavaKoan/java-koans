@@ -1,16 +1,15 @@
 package com.nps.koan.invariants;
 
-import com.nps.java.mutables.BrokenPeriod;
-import com.nps.java.mutables.Period;
 import com.nicholaspaulsmith.koan.fixture.KoanRunner;
 import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
+import com.nps.java.mutables.BrokenPeriod;
+import com.nps.java.mutables.Period;
 import org.junit.runner.RunWith;
 
 import java.util.Date;
 
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
-import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -32,7 +31,7 @@ public class InvariantBasics {
         Date start = new Date(JUNE_15_2013.getTime());
         Date end = new Date(MAY_29_2013.getTime());
 
-        Class exceptionClass = Date.class;
+        String messageUnderMeditation = "";
 
         /* (@_@) */
 
@@ -42,7 +41,7 @@ public class InvariantBasics {
             BrokenPeriod brokenPeriod = new BrokenPeriod(start, end);
             fail("Should have thrown Exception");
         } catch (Exception e){
-            assertThat(e, is(instanceOf(exceptionClass)));
+            assertThat(messageUnderMeditation, is(e.getMessage()));
         }
     }
 
