@@ -1,5 +1,6 @@
-package com.nps.patterns.decorator.ex2;
+package com.nps.koan.patterns.decorator.ex2;
 
+import com.nps.patterns.decorator.ex2.L33tSp34kInputStream;
 import org.junit.Test;
 
 import java.io.IOException;

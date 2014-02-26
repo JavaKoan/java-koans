@@ -1,5 +1,8 @@
-package com.nps.patterns.observer.ex1;
+package com.nps.koan.patterns.observer.ex1;
 
+import com.nps.patterns.observer.ex1.CollectionCustomer;
+import com.nps.patterns.observer.ex1.HomeDeliveryCustomer;
+import com.nps.patterns.observer.ex1.NewsKiosk;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

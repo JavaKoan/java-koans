@@ -1,5 +1,8 @@
-package com.nps.patterns.strategy.ex1;
+package com.nps.koan.patterns.strategy.ex1;
 
+import com.nps.patterns.strategy.ex1.AcquirementByCollection;
+import com.nps.patterns.strategy.ex1.AcquirementByDelivery;
+import com.nps.patterns.strategy.ex1.NewsKiosk;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

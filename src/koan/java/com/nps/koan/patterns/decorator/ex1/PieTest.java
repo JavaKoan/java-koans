@@ -1,14 +1,17 @@
-package com.nps.patterns.decorator.ex1;
+package com.nps.koan.patterns.decorator.ex1;
 
+import com.nicholaspaulsmith.koan.fixture.KoanRunner;
 import org.junit.Test;
 import com.nps.patterns.decorator.domain.ChickenAndLeek;
 import com.nps.patterns.decorator.domain.Liquor;
 import com.nps.patterns.decorator.domain.Mash;
 import com.nps.patterns.decorator.domain.Pie;
 import com.nps.patterns.decorator.domain.SteakAndKidney;
+import org.junit.runner.RunWith;
 
 import static junit.framework.Assert.assertEquals;
 
+@RunWith(KoanRunner.class)
 public class PieTest {
 
     @Test
