@@ -7,28 +7,36 @@
     <groupId>java-koans</groupId>
     <artifactId>java-koans</artifactId>
     <version>1.0</version>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <koan-annotations.version>1.0.0</koan-annotations.version>
+        <joda-time.version>2.1</joda-time.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-        </dependency>
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
-            <version>2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math</artifactId>
-            <version>2.0-SNAPSHOT</version>
+            <version>${joda-time.version}</version>
         </dependency>
         <dependency>
             <groupId>com.nicholaspaulsmith</groupId>
             <artifactId>koan-annotations</artifactId>
-            <version>1.0.0</version>
+            <version>${koan-annotations.version}</version>
         </dependency>
     </dependencies>
-
-
 </project>

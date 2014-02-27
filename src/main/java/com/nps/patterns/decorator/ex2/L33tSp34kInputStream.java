@@ -13,7 +13,7 @@ import java.io.InputStream;
  */
 public class L33tSp34kInputStream extends FilterInputStream {
 
-    protected L33tSp34kInputStream(InputStream in) {
+    public L33tSp34kInputStream(InputStream in) {
         super(in);
     }
 

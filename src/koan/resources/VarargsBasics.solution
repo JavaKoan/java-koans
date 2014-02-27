@@ -1,0 +1,19 @@
+reflectOnCallingAMethodThatHasAVariableNumberOfArguments
+[
+        maxUnderMeditation = 8;
+]
+
+reflectOnHowVarargsCanIntroduceRuntimeExceptions
+[
+            BrokenCompute.max();
+]
+
+reflectOnAddingExceptionHandlingForZeroArgument
+[
+        messageUnderMeditation = "Too few arguments";
+]
+
+reflectOnCallingAMethodThatRequiresAtLeastOneArgument
+[
+        maxUnderMeditation = 8;
+]

@@ -1,20 +1,24 @@
 package com.nps.koan.patterns.observer.ex1;
 
+import com.nicholaspaulsmith.koan.fixture.KoanRunner;
+import com.nicholaspaulsmith.koan.fixture.annotation.Koan;
+import com.nps.patterns.observer.domain.Customer;
+import com.nps.patterns.observer.domain.Magazine;
 import com.nps.patterns.observer.ex1.CollectionCustomer;
 import com.nps.patterns.observer.ex1.HomeDeliveryCustomer;
 import com.nps.patterns.observer.ex1.NewsKiosk;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
-import com.nps.patterns.observer.domain.Customer;
-import com.nps.patterns.observer.domain.Magazine;
+import org.junit.runner.RunWith;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.core.StringContains.containsString;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,9 +27,10 @@ import static junit.framework.Assert.assertTrue;
  * Time: 11:46
  * To change this template use File | Settings | File Templates.
  */
-public class NewsKioskTest {
+@RunWith(KoanRunner.class)
+public class ObserverKoan {
 
-    private final ByteArrayOutputStream systemOutContent = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream systemDotOutContent = new ByteArrayOutputStream();
 
     private NewsKiosk newsKiosk;
 
@@ -36,82 +41,106 @@ public class NewsKioskTest {
     private final String DICK = "Dick";
     private final String HARRY = "Harry";
 
-    @Before
-    public void setUp(){
-        newsKiosk = new NewsKiosk();
-    }
 
-    @Test
-    public void shouldReadMagazine(){
+    /**
+     * Meditate on the outcome of a customer reading a magazine
+     */
+    @Koan
+    public void reflectOnTheOutcomeOfACustomerReadingAMagazine(){
         Customer tom = new Customer(TOM);
-
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
-
         tom.read(magazine);
 
-        String outputUnderTest = systemOutContent.toString().trim();
+        String outputUnderMeditation = "";
 
-        assertEquals(TOM + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
+        /* (@_@) */
+        outputUnderMeditation = TOM + " is reading: " + MAGAZINE_CONTENT;
+        /* (^_^) */
+
+        assertThat(outputUnderMeditation, is(getSystemDotOutContent()));
     }
 
-    @Test
-    public void shouldPushMagazineToCustomer(){
+    /**
+     * Meditate on the outcome of a new magazine being published when the argument based notify method is called
+     * on the Subject
+     */
+    @Koan
+    public void reflectOnHowObserversAreNotifiedOfUpdatesUsingPush(){
         HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
 
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
-        newsKiosk.newMagazinePublished(magazine);
 
-        String outputUnderTest = systemOutContent.toString().trim();
-        assertEquals(TOM + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
+        /* (@_@) */
+        newsKiosk.newMagazinePublished(magazine);
+        /* (^_^) */
+
+        assertThat(getSystemDotOutContent(), is(TOM + " is reading: " + MAGAZINE_CONTENT));
     }
 
-    @Test
-    public void shouldAllowPullForCustomer(){
+    /**
+     * Meditate on the outcome of a new magazine being published when the zero argument notify method is called
+     * on the Subject
+     */
+    @Koan
+    public void reflectOnHowObserversCanBeNotifiedUsingPullRequest(){
         CollectionCustomer harry = new CollectionCustomer(HARRY, newsKiosk);
 
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
-        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
 
-        String outputUnderTest = systemOutContent.toString().trim();
-        assertEquals(HARRY + " is reading: " + MAGAZINE_CONTENT, outputUnderTest);
+        /* (@_@) */
+        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
+        /* (^_^) */
+
+        assertThat(getSystemDotOutContent(), is(HARRY + " is reading: " + MAGAZINE_CONTENT));
     }
 
-    @Test
-    public void shouldPushMagazineToTwoCustomers(){
+    /**
+     * Meditate on how the pattern supports notifying all interested parties
+     */
+    @Koan
+    public void reflectOnNotifyingAllInterestedParties(){
+
+        /* (@_@) */
         HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
         HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
 
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
         newsKiosk.newMagazinePublished(magazine);
-
-        String outputUnderTest = systemOutContent.toString().trim();
+        /* (^_^) */
 
         String tomIsReading = TOM + " is reading: " + MAGAZINE_CONTENT;
         String harryIsReading = HARRY + " is reading: " + MAGAZINE_CONTENT;
 
-        assertTrue(outputUnderTest.contains(tomIsReading));
-        assertTrue(outputUnderTest.contains(harryIsReading));
+        assertThat(getSystemDotOutContent(), containsString(tomIsReading));
+        assertThat(getSystemDotOutContent(), containsString(harryIsReading));
     }
 
-    @Test
-    public void shouldNotPushToDeliveryCustomer(){
+    /**
+     * Meditate on the type of news kiosk update that will distribute to Harry but not Tom
+     */
+    @Koan
+    public void reflectOnDifferentTypesOfCustomerWillReceiveDifferentServices(){
         HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
         CollectionCustomer harry = new CollectionCustomer(HARRY, newsKiosk);
 
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+
+        /* (@_@) */
         newsKiosk.newMagazinePublishedCollectionOnly(magazine);
+        /* (^_^) */
 
-        String tomIsReading = TOM + " is reading: " + MAGAZINE_CONTENT;
         String harryIsReading = HARRY + " is reading: " + MAGAZINE_CONTENT;
+        String tomIsReading = TOM + " is reading: " + MAGAZINE_CONTENT;
 
-        String outputUnderTest = systemOutContent.toString().trim();
-
-        assertTrue(outputUnderTest.contains(harryIsReading));
-        assertFalse(outputUnderTest.contains(tomIsReading));
+        assertThat(getSystemDotOutContent(), containsString(harryIsReading));
+        assertThat(getSystemDotOutContent(), not(containsString(tomIsReading)));
     }
 
-    @Test
-    public void wontPublishInOrderSubscribersWereAdded(){
+    /**
+     * Meditate on the order in which observers are notified are
+     */
+    @Koan
+    public void meditateOnNotificationOrder(){
         HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
         HomeDeliveryCustomer dick = new HomeDeliveryCustomer(DICK, newsKiosk);
         HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
@@ -119,7 +148,9 @@ public class NewsKioskTest {
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
         newsKiosk.newMagazinePublished(magazine);
 
-        String outputUnderTest = systemOutContent.toString().trim();
+        /* (@_@) */
+
+        /* (^_^) */
 
         String expectedOutput = TOM + " is reading: " + MAGAZINE_CONTENT + "\n" +
                 DICK + " is reading: " + MAGAZINE_CONTENT + "\n" +
@@ -130,11 +161,16 @@ public class NewsKioskTest {
 
     @Before
     public void setUpSystemStreams(){
-        System.setOut(new PrintStream(systemOutContent));
+        newsKiosk = new NewsKiosk();
+        System.setOut(new PrintStream(systemDotOutContent));
     }
 
     @After
     public void cleanUpSystemStreams() {
         System.setOut(null);
+    }
+
+    private String getSystemDotOutContent(){
+        return systemDotOutContent.toString().trim();
     }
 }

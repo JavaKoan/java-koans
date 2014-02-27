@@ -1,0 +1,21 @@
+reflectOnThePriceOfAChickenAndLeekPieWithMash
+[
+        pie = new Mash(pie);
+]
+
+reflectOnTheDescriptionOfAChickenAndLeekPieWithMash
+[
+        descriptionUnderMeditation = "A Chicken and Leek Pie, Liquor";
+]
+
+reflectOneUsingAddingTheSameDecorationTwice
+[
+        pie = new Mash(pie);
+        pie = new Mash(pie);
+        pie = new Liquor(pie);
+]
+
+reflectOnTheDecorationOrderBeingImportant
+[
+        descriptionUnderMeditation = "Classic Steak and Kidney Pie, Mash, Liquor, Mash";
+]

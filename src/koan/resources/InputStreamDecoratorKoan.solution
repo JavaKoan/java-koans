@@ -1,0 +1,10 @@
+reflectOnTheDecoratorPatternBeingUsingInTheCoreJavaLibraries
+[
+            int character;
+            StringBuilder sb = new StringBuilder();
+            while((character = in.read()) >= 0){
+                sb.append((char)character);
+            }
+            phraseUnderMeditation = sb.toString();
+]
+

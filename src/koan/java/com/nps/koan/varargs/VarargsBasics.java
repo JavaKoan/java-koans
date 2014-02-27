@@ -31,7 +31,7 @@ public class VarargsBasics {
         int maxUnderMeditation = 0;
 
         // (@_@)
-        maxUnderMeditation = 8;
+
         // (^_^)
 
         assertThat(maxUnderMeditation, is(max));
@@ -47,8 +47,9 @@ public class VarargsBasics {
 
         try {
             // (@_@)
-            BrokenCompute.max();
+
             // (^_^)
+
         } catch (Exception ex){
             exceptionUnderMeditation = ex;
         }
@@ -66,7 +67,7 @@ public class VarargsBasics {
         String messageUnderMeditation = "";
 
         // (@_@)
-        messageUnderMeditation = "Too few arguments";
+
         // (^_^)
 
         try {
@@ -87,14 +88,20 @@ public class VarargsBasics {
         int maxUnderMeditation = 0;
 
         // (@_@)
-        maxUnderMeditation = 8;
+
         // (^_^)
 
         assertThat(maxUnderMeditation, is(max));
     }
 
+    /**
+     *  Meditate on the time it take for each of the method calls.
+     */
     @Koan
-    public void shouldShowArrayCreationCostCompute(){
+    public void reflectOnArrayCreationCostCompute(){
+        // (@_@)
+        // No meditation required
+        // (^_^)
 
         long startTime = System.nanoTime();
         int max = PerformantCompute.max(1);
