@@ -14,7 +14,6 @@ import org.junit.runner.RunWith;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static junit.framework.Assert.assertEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
@@ -54,7 +53,7 @@ public class ObserverKoan {
         String outputUnderMeditation = "";
 
         /* (@_@) */
-        outputUnderMeditation = TOM + " is reading: " + MAGAZINE_CONTENT;
+
         /* (^_^) */
 
         assertThat(outputUnderMeditation, is(getSystemDotOutContent()));
@@ -71,7 +70,7 @@ public class ObserverKoan {
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
 
         /* (@_@) */
-        newsKiosk.newMagazinePublished(magazine);
+
         /* (^_^) */
 
         assertThat(getSystemDotOutContent(), is(TOM + " is reading: " + MAGAZINE_CONTENT));
@@ -88,7 +87,7 @@ public class ObserverKoan {
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
 
         /* (@_@) */
-        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
+
         /* (^_^) */
 
         assertThat(getSystemDotOutContent(), is(HARRY + " is reading: " + MAGAZINE_CONTENT));
@@ -101,11 +100,7 @@ public class ObserverKoan {
     public void reflectOnNotifyingAllInterestedParties(){
 
         /* (@_@) */
-        HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
-        HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
 
-        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
-        newsKiosk.newMagazinePublished(magazine);
         /* (^_^) */
 
         String tomIsReading = TOM + " is reading: " + MAGAZINE_CONTENT;
@@ -126,7 +121,7 @@ public class ObserverKoan {
         Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
 
         /* (@_@) */
-        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
+
         /* (^_^) */
 
         String harryIsReading = HARRY + " is reading: " + MAGAZINE_CONTENT;
@@ -140,23 +135,20 @@ public class ObserverKoan {
      * Meditate on the order in which observers are notified are
      */
     @Koan
-    public void meditateOnNotificationOrder(){
-        HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
-        HomeDeliveryCustomer dick = new HomeDeliveryCustomer(DICK, newsKiosk);
-        HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
-
-        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
-        newsKiosk.newMagazinePublished(magazine);
+    public void reflectOnNotificationOrder(){
 
         /* (@_@) */
 
         /* (^_^) */
 
-        String expectedOutput = TOM + " is reading: " + MAGAZINE_CONTENT + "\n" +
-                DICK + " is reading: " + MAGAZINE_CONTENT + "\n" +
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine);
+
+        String expectedOutput = TOM + " is reading: " + MAGAZINE_CONTENT + System.lineSeparator() +
+                DICK + " is reading: " + MAGAZINE_CONTENT + System.lineSeparator() +
                 HARRY + " is reading: " + MAGAZINE_CONTENT;
 
-        assertEquals(expectedOutput, outputUnderTest);
+        assertThat(getSystemDotOutContent(), is(expectedOutput));
     }
 
     @Before

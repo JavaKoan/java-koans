@@ -1,0 +1,35 @@
+reflectOnTheOutcomeOfACustomerReadingAMagazine
+[
+        outputUnderMeditation = TOM + " is reading: " + MAGAZINE_CONTENT;
+]
+
+reflectOnHowObserversAreNotifiedOfUpdatesUsingPush
+[
+        newsKiosk.newMagazinePublished(magazine);
+]
+
+reflectOnHowObserversCanBeNotifiedUsingPullRequest
+[
+        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
+]
+
+reflectOnNotifyingAllInterestedParties
+[
+        HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
+        HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
+
+        Magazine magazine = new Magazine(MAGAZINE_CONTENT, MAGAZINE_EDITION);
+        newsKiosk.newMagazinePublished(magazine);
+]
+
+reflectOnDifferentTypesOfCustomerWillReceiveDifferentServices
+[
+        newsKiosk.newMagazinePublishedCollectionOnly(magazine);
+]
+
+reflectOnNotificationOrder
+[
+        HomeDeliveryCustomer harry = new HomeDeliveryCustomer(HARRY, newsKiosk);
+        HomeDeliveryCustomer dick = new HomeDeliveryCustomer(DICK, newsKiosk);
+        HomeDeliveryCustomer tom = new HomeDeliveryCustomer(TOM, newsKiosk);
+]
