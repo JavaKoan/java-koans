@@ -11,13 +11,8 @@ import static junit.framework.Assert.fail;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-
-/**
- * Created by nicholas_smith on 03/12/13.
- */
 @RunWith(KoanRunner.class)
 public class KoanBasics {
-
 
     /**
      * Grasshoppers should meditate on how to make the product int equal to 50.
@@ -29,6 +24,7 @@ public class KoanBasics {
         int product = 0;
 
         /* (@_@) Your code starts here */
+
         /* (^_^) Your code ends here */
 
         assertThat(product, is(50));
