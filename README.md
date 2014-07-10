@@ -1,5 +1,4 @@
-# Java Koans   (WIP - These are not the Koans your looking for)
-
+# Java Koans
 This is set of Koans intended to improve fundamental understanding of the Java programming language.
 
 
