@@ -8,6 +8,11 @@ reflectOnProvidingTheSolutionToTheProductOfIAndJ
         product = i * j;
 ]
 
+reflectOnProvidingTheStartingProblemForAKoan
+[
+        largest = Math.max(i, j);
+]
+
 reflectOneIgnoringWhenVexedAndEnlightened
 [
         fail("This Koan should be ignored as it is both Vexed and Enlightened");
