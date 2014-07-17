@@ -44,7 +44,7 @@ public class TypeErasure {
     }
 
     /**
-     * Mediate on how to access elements of a non gerericized type and how this is the representation of the code after compilation.
+     * Mediate on how to access elements of a non gerericized type and how it is represented at runtime
      */
     @Koan
     public void reflectOnWhatTheAboveCodeCompilesAs(){
