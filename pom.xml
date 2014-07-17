@@ -11,7 +11,7 @@
     <properties>
         <java.version>1.7</java.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <koan-annotations.version>1.0.0</koan-annotations.version>
+        <koan-annotations.version>1.0.1</koan-annotations.version>
         <joda-time.version>2.1</joda-time.version>
     </properties>
 
@@ -34,7 +34,7 @@
             <version>${joda-time.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.nicholaspaulsmith</groupId>
+            <groupId>com.javakoan</groupId>
             <artifactId>koan-annotations</artifactId>
             <version>${koan-annotations.version}</version>
         </dependency>
