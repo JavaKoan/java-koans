@@ -2,7 +2,6 @@ package com.javakoan.lesson.java.primitives;
 
 
 import com.javakoan.fixture.KoanRunner;
-import com.javakoan.fixture.annotation.Enlighten;
 import com.javakoan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;
 

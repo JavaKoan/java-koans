@@ -11,7 +11,7 @@
     <properties>
         <java.version>1.7</java.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <koan-annotations.version>1.0.1</koan-annotations.version>
+        <koan-annotations.version>1.0.2</koan-annotations.version>
         <joda-time.version>2.1</joda-time.version>
     </properties>
 
