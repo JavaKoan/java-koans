@@ -2,26 +2,97 @@ package com.javakoan.lesson.java.primitives;
 
 
 import com.javakoan.fixture.KoanRunner;
+import com.javakoan.fixture.annotation.Enlighten;
 import com.javakoan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 /**
- * Created with IntelliJ IDEA.
- * User: nicholas_smith
- * Date: 29/05/13
- * Time: 16:12
- * To change this template use File | Settings | File Templates.
+ * This set of Koans aims to improve the students understanding of Autoboxing and Unboxing
+ *
+ * Recommend reading: http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html
  */
 @RunWith(KoanRunner.class)
-public class AutoBoxListFail {
+public class Autoboxing {
+
+    /**
+     * Meditate on the meaning of Autoboxing when assigning variables
+     */
+    @Koan
+    public void reflectedOnAutoboxingWithAssignment(){
+        Integer i = new Integer(0);
+
+        /* (@_@) */
+
+        /* (^_^) */
+
+        assertThat(i, is(5));
+    }
+
+    /**
+     * Meditate on the meaning of Autoboxing when calling methods
+     */
+    @Koan
+    public void reflectedOnAutoboxingWhenPassingParametersWhileCallingSquareOf(){
+        int i = Boxer.squareOf(new Integer(10));
+
+        /* (@_@) */
+
+        /* (^_^) */
+
+        assertThat(i, is(25));
+    }
+
+
+    /**
+     * Meditate on the meaning of Unboxing when assigning values
+     */
+    @Koan
+    public void reflectedOnUnboxingWithAssignment(){
+        int i = 0;
+
+        /* (@_@) */
+
+        /* (^_^) */
+
+        assertThat(i, is(5));
+    }
+
+    /**
+     * Meditate on the a more likely occurrence of unboxing when assigning values
+     */
+    @Koan
+    public void reflectedOnUnboxingWithAssignmentInALoop(){
+        List<Integer> integers = Arrays.asList(1, 2, 3);
+
+        int sum = 0;
+
+        for (Integer i : integers){
+            /* (@_@) */
+
+            /* (^_^) */
+        }
+
+        assertThat(sum, is(6));
+    }
+
+    /**
+     * Meditate on the meaning of unboxing when calling methods
+     */
+    @Koan
+    public void reflectedOnUnboxingWhenPassingParametersWhileCallingDoubleOf(){
+        int i = Boxer.doubleOf(10);
+
+        /* (@_@) */
+
+        /* (^_^) */
+
+        assertThat(i, is(10));
+    }
 
 
     /**
@@ -103,4 +174,17 @@ public class AutoBoxListFail {
         assertThat(set.toString(), is(expectedOutput));
         assertThat(list.toString(), is(expectedOutput));
     }
+
+
+    private static class Boxer {
+
+        public static int squareOf(Integer number){
+            return number * number;
+        }
+
+        public static int doubleOf(int number){
+            return number + number;
+        }
+    }
+
 }

@@ -1,3 +1,28 @@
+reflectedOnAutoboxingWithAssignment
+[
+        i = 5;
+]
+
+reflectedOnAutoboxingWhenPassingParametersWhileCallingSquareOf
+[
+        i = Boxer.squareOf(5);
+]
+
+reflectedOnUnboxingWithAssignment
+[
+        i = new Integer(5);
+]
+
+reflectedOnUnboxingWithAssignmentInALoop
+[
+            sum += i;
+]
+
+reflectedOnUnboxingWhenPassingParametersWhileCallingDoubleOf
+[
+        i = Boxer.doubleOf(new Integer(5));
+]
+
 reflectOnTheDifferencesBetweenCollectionImplementationsWhenRemovingItems
 [
         expectedSetOutput = "[-3, -2, -1]";
