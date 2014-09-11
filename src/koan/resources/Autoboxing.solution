@@ -40,3 +40,9 @@ reflectOnHowToRemoveElementsInAListWithValueOf
             set.remove(i);
             list.remove(Integer.valueOf(i));
 ]
+
+reflectOnHowBoxingOccursWithValueOfNotNew
+[
+        l3 = new Long(1L);
+        l6 = l5;
+]

@@ -9,6 +9,8 @@ import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.core.IsSame.sameInstance;
 
 /**
  * This set of Koans aims to improve the students understanding of Autoboxing and Unboxing
@@ -174,6 +176,24 @@ public class Autoboxing {
         assertThat(list.toString(), is(expectedOutput));
     }
 
+    @Koan
+    public void reflectOnHowBoxingOccursWithValueOfNotNew(){
+        Long l1 = 1L;
+        Long l2 = Long.valueOf(1L);
+        Long l3 = 1L;
+
+        Long l5 = 150L;
+        Long l6 = Long.valueOf(150L);
+
+        /* (@_@) */
+
+        /* (^_^) */
+
+        assertThat(l1, is(sameInstance(l2)));
+        assertThat(l1, not(sameInstance(l3)));
+
+        assertThat(l5, is(sameInstance(l6)));
+    }
 
     private static class Boxer {
 
