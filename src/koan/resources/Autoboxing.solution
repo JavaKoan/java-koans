@@ -29,18 +29,6 @@ reflectOnTheDifferencesBetweenCollectionImplementationsWhenRemovingItems
         expectedListOutput = "[-2, 0, 2]";
 ]
 
-reflectOnHowToRemoveElementsInAListWithCasting
-[
-            set.remove(i);
-            list.remove((Integer)i);
-]
-
-reflectOnHowToRemoveElementsInAListWithValueOf
-[
-            set.remove(i);
-            list.remove(Integer.valueOf(i));
-]
-
 reflectOnHowBoxingOccursWithValueOfNotNew
 [
         l3 = new Long(1L);

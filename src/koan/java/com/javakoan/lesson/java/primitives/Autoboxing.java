@@ -126,64 +126,14 @@ public class Autoboxing {
         assertThat(list.toString(), is(expectedListOutput));
     }
 
-    /**
-     * Meditate on how to remove the actual object from a List.
-     */
-    @Koan
-    public void reflectOnHowToRemoveElementsInAListWithCasting(){
-        Set<Integer> set = new TreeSet<>();
-        List<Integer> list = new ArrayList<>();
-
-        for (int i = -3; i < 3; i++) {
-            set.add(i);
-            list.add(i);
-        }
-
-        for (int i = 0; i < 3; i++) {
-            /* (@_@) */
-
-            /* (^_^) */
-        }
-
-        String expectedOutput = "[-3, -2, -1]";
-
-        assertThat(set.toString(), is(expectedOutput));
-        assertThat(list.toString(), is(expectedOutput));
-    }
-
-    /**
-     * Meditate further on how to remove the actual object from a List.
-     */
-    @Koan
-    public void reflectOnHowToRemoveElementsInAListWithValueOf(){
-        Set<Integer> set = new TreeSet<>();
-        List<Integer> list = new ArrayList<>();
-
-        for (int i = -3; i < 3; i++) {
-            set.add(i);
-            list.add(i);
-        }
-
-        for (int i = 0; i < 3; i++) {
-            /* (@_@) */
-
-            /* (^_^) */
-        }
-
-        String expectedOutput = "[-3, -2, -1]";
-
-        assertThat(set.toString(), is(expectedOutput));
-        assertThat(list.toString(), is(expectedOutput));
-    }
-
     @Koan
     public void reflectOnHowBoxingOccursWithValueOfNotNew(){
         Long l1 = 1L;
         Long l2 = Long.valueOf(1L);
         Long l3 = 1L;
 
-        Long l5 = 150L;
-        Long l6 = Long.valueOf(150L);
+        Long l5 = 128L;
+        Long l6 = Long.valueOf(128L);
 
         /* (@_@) */
 
