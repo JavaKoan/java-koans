@@ -1,9 +1,8 @@
 package com.javakoan.lesson.java.overloading;
 
-import com.nps.java.overloading.DogClassifier;
-import com.nps.java.overriding.Beagle;
-import com.nps.java.overriding.Dog;
-import com.nps.java.overriding.Snoopy;
+import com.javakoan.lesson.java.overriding.Beagle;
+import com.javakoan.lesson.java.overriding.Dog;
+import com.javakoan.lesson.java.overriding.Snoopy;
 import com.javakoan.fixture.KoanRunner;
 import com.javakoan.fixture.annotation.Koan;
 import org.junit.runner.RunWith;

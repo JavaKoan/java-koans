@@ -1,6 +1,5 @@
 package com.javakoan.lesson.java.primitives;
 
-import com.nps.java.primitives.SweetShop;
 import com.javakoan.fixture.KoanRunner;
 import com.javakoan.fixture.annotation.Koan;
 import org.junit.Before;

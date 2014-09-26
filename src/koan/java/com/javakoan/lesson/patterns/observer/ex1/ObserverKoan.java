@@ -2,11 +2,8 @@ package com.javakoan.lesson.patterns.observer.ex1;
 
 import com.javakoan.fixture.KoanRunner;
 import com.javakoan.fixture.annotation.Koan;
-import com.nps.patterns.observer.domain.Customer;
-import com.nps.patterns.observer.domain.Magazine;
-import com.nps.patterns.observer.ex1.CollectionCustomer;
-import com.nps.patterns.observer.ex1.HomeDeliveryCustomer;
-import com.nps.patterns.observer.ex1.NewsKiosk;
+import com.javakoan.lesson.patterns.observer.domain.Customer;
+import com.javakoan.lesson.patterns.observer.domain.Magazine;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;

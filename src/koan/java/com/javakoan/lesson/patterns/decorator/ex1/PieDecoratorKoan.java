@@ -2,11 +2,11 @@ package com.javakoan.lesson.patterns.decorator.ex1;
 
 import com.javakoan.fixture.KoanRunner;
 import com.javakoan.fixture.annotation.Koan;
-import com.nps.patterns.decorator.domain.ChickenAndLeek;
-import com.nps.patterns.decorator.domain.Liquor;
-import com.nps.patterns.decorator.domain.Mash;
-import com.nps.patterns.decorator.domain.Pie;
-import com.nps.patterns.decorator.domain.SteakAndKidney;
+import com.javakoan.lesson.patterns.decorator.domain.ChickenAndLeek;
+import com.javakoan.lesson.patterns.decorator.domain.Liquor;
+import com.javakoan.lesson.patterns.decorator.domain.Mash;
+import com.javakoan.lesson.patterns.decorator.domain.Pie;
+import com.javakoan.lesson.patterns.decorator.domain.SteakAndKidney;
 import org.junit.runner.RunWith;
 
 import static org.hamcrest.MatcherAssert.assertThat;

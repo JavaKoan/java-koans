@@ -2,9 +2,6 @@ package com.javakoan.lesson.java.varargs;
 
 import com.javakoan.fixture.KoanRunner;
 import com.javakoan.fixture.annotation.Koan;
-import com.nps.java.varargs.BrokenCompute;
-import com.nps.java.varargs.ImprovedCompute;
-import com.nps.java.varargs.PerformantCompute;
 import org.junit.runner.RunWith;
 
 import static org.hamcrest.MatcherAssert.assertThat;

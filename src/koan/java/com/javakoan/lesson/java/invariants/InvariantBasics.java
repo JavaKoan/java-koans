@@ -2,8 +2,8 @@ package com.javakoan.lesson.java.invariants;
 
 import com.javakoan.fixture.KoanRunner;
 import com.javakoan.fixture.annotation.Koan;
-import com.nps.java.mutables.BrokenPeriod;
-import com.nps.java.mutables.Period;
+import com.javakoan.lesson.java.mutables.BrokenPeriod;
+import com.javakoan.lesson.java.mutables.Period;
 import org.junit.runner.RunWith;
 
 import java.util.Date;

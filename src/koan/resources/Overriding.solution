@@ -1,0 +1,42 @@
+reflectOnCallingAMethodOnAClass
+[
+        expectedBark = "woof-woof";
+]
+
+reflectOnTheNoiseABeagleMakes
+[
+        expectedBark = "yap-yap";
+]
+
+reflectOnIteratingOverDogsInACollection
+[
+        expectedBark = "woof-woof.yap-yap.peanuts.";
+]
+
+reflectOnHowHidingAStaticMethodIsDifferentToOverridingAnInstanceMethod
+[
+        dogRollOverResponse = "rolls-over";
+        snoopyRollOverResponse = "unlikely";
+]
+
+reflectOnTheUseOfDefaultMethodsFromInterfaces
+[
+        expectedResponse = "wag-tail";
+]
+
+reflectOnUsingInheritanceToDeterminingOverriding
+[
+        expectedResponse = "run-about-the-house";
+]
+
+reflectOnInheritanceOfDefaultMethodsWithInterfaces
+[
+        snoopyIsDrawnBy = "hand";
+        slhIsDrawnBy = "computer";
+]
+
+reflectOnOverridingInterfaceMethodsWithDefaultMethods
+[
+        snoopysFirstAppearance = "in print";
+        slhFirstAppearance = "on tv";
+]

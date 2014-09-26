@@ -1,12 +1,10 @@
 package com.javakoan.lesson.patterns.observer.ex2;
 
-import com.nps.patterns.observer.ex2.HomeDeliveryCustomer;
-import com.nps.patterns.observer.ex2.NewsKiosk;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import com.nps.patterns.observer.domain.Customer;
-import com.nps.patterns.observer.domain.Magazine;
+import com.javakoan.lesson.patterns.observer.domain.Customer;
+import com.javakoan.lesson.patterns.observer.domain.Magazine;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

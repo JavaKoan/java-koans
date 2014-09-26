@@ -3,7 +3,6 @@ package com.javakoan.lesson.patterns.decorator.ex2;
 import com.javakoan.fixture.KoanRunner;
 import com.javakoan.fixture.annotation.Enlighten;
 import com.javakoan.fixture.annotation.Koan;
-import com.nps.patterns.decorator.ex2.L33tSp34kInputStream;
 import org.junit.runner.RunWith;
 
 import java.io.ByteArrayInputStream;

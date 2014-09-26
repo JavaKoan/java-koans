@@ -1,13 +1,10 @@
 package com.javakoan.lesson.patterns.strategy.ex1;
 
-import com.nps.patterns.strategy.ex1.AcquirementByCollection;
-import com.nps.patterns.strategy.ex1.AcquirementByDelivery;
-import com.nps.patterns.strategy.ex1.NewsKiosk;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import com.nps.patterns.strategy.domain.Customer;
-import com.nps.patterns.strategy.domain.Magazine;
+import com.javakoan.lesson.patterns.strategy.domain.Customer;
+import com.javakoan.lesson.patterns.strategy.domain.Magazine;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
