@@ -15,7 +15,8 @@ import static org.hamcrest.core.Is.is;
 /**
  * This set of Koans aims to improve the students understanding of overriding
  *
- * Recommend reading: http://docs.oracle.com/javase/tutorial/java/IandI/override.html
+ * Recommended reading: http://docs.oracle.com/javase/tutorial/java/IandI/override.html
+ *                      http://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html
  */
 @RunWith(KoanRunner.class)
 public class Overriding {
