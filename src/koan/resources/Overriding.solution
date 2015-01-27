@@ -17,6 +17,7 @@ reflectOnHowHidingAStaticMethodIsDifferentToOverridingAnInstanceMethod
 [
         dogRollOverResponse = "rolls-over";
         snoopyRollOverResponse = "unlikely";
+        mySnoopyRollOverResponse = "rolls-over";
 ]
 
 reflectOnTheUseOfDefaultMethodsFromInterfaces

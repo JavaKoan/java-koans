@@ -82,11 +82,14 @@ public class Overriding {
     /**
      * Meditate on the a hiding static methods with the rollOver command.
      */
-    @Koan @Enlighten
+    @Koan
     public void reflectOnHowHidingAStaticMethodIsDifferentToOverridingAnInstanceMethod() {
+
+        Dog mySnoopy = Snoopy.getInstance();
 
         String dogRollOverResponse = "";
         String snoopyRollOverResponse = "";
+        String mySnoopyRollOverResponse = "";
 
         /* (@_@) */
 
@@ -94,6 +97,7 @@ public class Overriding {
 
         assertThat(Dog.rollOver(), is(dogRollOverResponse));
         assertThat(Snoopy.rollOver(), is(snoopyRollOverResponse));
+        assertThat(mySnoopy.rollOver(), is(mySnoopyRollOverResponse));
     }
 
 
