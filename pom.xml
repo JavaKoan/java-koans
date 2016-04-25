@@ -13,9 +13,17 @@
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <koan-annotations.version>1.0.2</koan-annotations.version>
         <joda-time.version>2.1</joda-time.version>
+
     </properties>
 
     <build>
+        <testSourceDirectory>${project.basedir}/src/koan/java</testSourceDirectory>
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/src/koan/resources</directory>
+            </testResource>
+        </testResources>
+
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
