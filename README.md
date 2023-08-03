@@ -1,6 +1,6 @@
 # Java Koans
 
-[![Join the chat at https://gitter.im/JavaKoan/java-koans](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JavaKoan/java-koans?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![build status](https://github.com/JavaKoan/java-koans/actions/workflows/maven-package.yml/badge.svg?branch=master)](https://github.com/JavaKoan/java-koans/actions)
 
 This is set of Koans intended to improve fundamental understanding of the Java programming language.
 
@@ -40,10 +40,3 @@ Related Material
 [Collections](http://docs.oracle.com/javase/tutorial/collections/index.html)
 
 [Effective Java](http://books.google.co.uk/books?isbn=0132778041)
-
-Setting up Koans
-----------------
-
-Author
--------
-[Nick Smith](http://nicholaspaulsmith.com)
